@@ -1,0 +1,37 @@
+package rougelike.game.entities;
+
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
+import rougelike.game.graphics.ImageSprite;
+
+public class Ladder extends GameElement {
+    private ImageSprite sprite;
+
+    public Ladder(double positionX, double positionY, double width, double height, Image image) {
+        super(positionX, positionY, width, height, image);
+
+        this.sprite = new ImageSprite(1.0, new Image[] { image });
+    }
+
+    @Override
+    public boolean isOccupying() {
+        return false;
+    }
+
+    @Override
+    public InteractionResult interact(Entity entity) {
+        InteractionResultType[] interactionResultType = {};
+        if (entity instanceof Player) {
+            interactionResultType = new InteractionResultType[] {
+                    InteractionResultType.LEVEL_UP
+            };
+        }
+        return new InteractionResult(interactionResultType, entity);
+    }
+
+    @Override
+    public void render(GraphicsContext gc) {
+        sprite.render(gc, getPositionX(), getPositionY(), getWidth(), getHeight());
+    }
+
+}
