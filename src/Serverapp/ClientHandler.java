@@ -2,21 +2,30 @@ package Serverapp;
 
 import java.io.*;
 import java.net.Socket;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 import rougelike.game.dungeon.Dungeon;
 
 
 
 public class ClientHandler implements Runnable {
+    private static final Logger LOGGER = Logger.getLogger(ClientHandler.class.getName());
+    private static final String GET_ALL_DUNGEONS = "GET_ALL_DUNGEONS";
+    private static final String UPLOAD_DUNGEON = "UPLOAD_DUNGEON";
+    private static final String DOWNLOAD_DUNGEON = "DOWNLOAD_DUNGEON";
+    
     private final Socket socket;
     private final ObjectOutputStream out;
     private final ObjectInputStream in;
     private final Runnable broadcastDungeonList;
+    private final Runnable removeClientCallback;
 
-    public ClientHandler(Socket socket, Runnable broadcastDungeonList) throws IOException {
+    public ClientHandler(Socket socket, Runnable broadcastDungeonList, Runnable removeClientCallback) throws IOException {
         this.socket = socket;
         this.out = new ObjectOutputStream(socket.getOutputStream());
         this.in = new ObjectInputStream(socket.getInputStream());
         this.broadcastDungeonList = broadcastDungeonList;
+        this.removeClientCallback = removeClientCallback;
     }
 
     @Override
@@ -31,42 +40,45 @@ public class ClientHandler implements Runnable {
                 }
             }
         } catch (IOException | ClassNotFoundException e) {
-            System.err.println("Client disconnected: " + e.getMessage());
+            LOGGER.log(Level.INFO, "Client disconnected: " + e.getMessage());
         } finally {
             close();
+            if (removeClientCallback != null) {
+                removeClientCallback.run();
+            }
         }
     }
 
     private void handleCommand(String command) throws IOException, ClassNotFoundException {
-        System.out.println("Received command: " + command);
-        if ("GET_ALL_DUNGEONS".equals(command)) {
+        LOGGER.log(Level.INFO, "Received command: " + command);
+        if (GET_ALL_DUNGEONS.equals(command)) {
             sendMessage(ServerDungeonDatabase.getDungeons().stream().map(Dungeon::getName).toArray(String[]::new));
-        } else if ("UPLOAD_DUNGEON".equals(command)) {
+        } else if (UPLOAD_DUNGEON.equals(command)) {
             Dungeon receivedDungeon = (Dungeon) in.readObject();
-            System.out.println("Received dungeon from client: " + receivedDungeon.getName());
+            LOGGER.log(Level.INFO, "Received dungeon from client: " + receivedDungeon.getName());
             
             if (ServerDungeonDatabase.getDungeonByName(receivedDungeon.getName()) == null) {
-                ServerDungeonDatabase.getDungeons().add(receivedDungeon);
-                System.out.println("Added dungeon to server database: " + receivedDungeon.getName());
+                ServerDungeonDatabase.addDungeon(receivedDungeon);
+                LOGGER.log(Level.INFO, "Added dungeon to server database: " + receivedDungeon.getName());
                 broadcastDungeonList.run();
             } else {
-                System.out.println("Dungeon already exists on server: " + receivedDungeon.getName());
+                LOGGER.log(Level.INFO, "Dungeon already exists on server: " + receivedDungeon.getName());
             }
         
-        } else if ("DOWNLOAD_DUNGEON".equals(command)) {
+        } else if (DOWNLOAD_DUNGEON.equals(command)) {
             String dungeonName = (String) in.readObject();
-            System.out.println("Received dungeon name: " + dungeonName);
+            LOGGER.log(Level.INFO, "Received dungeon name: " + dungeonName);
             Dungeon dungeon = ServerDungeonDatabase.getDungeonByName(dungeonName);
 
             if (dungeon != null) {
-                System.out.println("Sending dungeon: " + dungeon.getName());
+                LOGGER.log(Level.INFO, "Sending dungeon: " + dungeon.getName());
                 sendMessage(dungeon);
             } else {
-                System.out.println("Dungeon not found: " + dungeonName);
+                LOGGER.log(Level.WARNING, "Dungeon not found: " + dungeonName);
                 sendMessage("Dungeon not found");
             }
         } else {
-            System.out.println("Unknown command: " + command);
+            LOGGER.log(Level.WARNING, "Unknown command: " + command);
         }
     }
 
@@ -84,7 +96,7 @@ public class ClientHandler implements Runnable {
             if (out != null)
                 out.close();
         } catch (IOException e) {
-            System.err.println("Error closing client handler: " + e.getMessage());
+            LOGGER.log(Level.WARNING, "Error closing client handler: " + e.getMessage());
         }
     }
 }

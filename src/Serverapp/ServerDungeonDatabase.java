@@ -1,16 +1,19 @@
 package Serverapp;
 
-import java.util.ArrayList;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.List;
+import java.util.Map;
 import rougelike.game.dungeon.Dungeon;
 
 public class ServerDungeonDatabase {
-    static List<Dungeon> dungeons = new ArrayList<>();
+    private static final List<Dungeon> dungeons = new CopyOnWriteArrayList<>();
+    private static final Map<String, Dungeon> dungeonCache = new ConcurrentHashMap<>();
 
     // 16 x 16
     // @formatter:off
     static {
-        dungeons.add(new Dungeon("Dungeon 3", new char[][][] {
+        Dungeon dungeon3 = new Dungeon("Dungeon 3", new char[][][] {
             {
                 { 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W' },
                 { 'W', 'P', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', 'W' },
@@ -47,9 +50,10 @@ public class ServerDungeonDatabase {
                 { 'W', ' ', ' ', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'W' },
                 { 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W' }
             }
-        }));
+        });
+        addDungeonInternal(dungeon3);
 
-        dungeons.add(new Dungeon("Dungeon 4", new char[][][] {
+        Dungeon dungeon4 = new Dungeon("Dungeon 4", new char[][][] {
             {
                 { 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W' },
                 { 'W', ' ', ' ', ' ', ' ', 'w', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'w', 'W' },
@@ -86,18 +90,30 @@ public class ServerDungeonDatabase {
                 { 'W', ' ', ' ', 'e', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'W' },
                 { 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W', 'W' }
             }
-        }));
+        });
+        addDungeonInternal(dungeon4);
     }
     // @formatter:on
 
     public static List<Dungeon> getDungeons() {
-        return dungeons;
+        return new CopyOnWriteArrayList<>(dungeons);
     }
 
 
 
     public static Dungeon getDungeonByName(String name) {
-        return dungeons.stream().filter(d -> d.getName().equals(name)).findFirst().orElse(null);
+        return dungeonCache.get(name);
+    }
+    
+    public static synchronized void addDungeon(Dungeon dungeon) {
+        addDungeonInternal(dungeon);
+    }
+    
+    private static void addDungeonInternal(Dungeon dungeon) {
+        if (dungeon != null && !dungeonCache.containsKey(dungeon.getName())) {
+            dungeons.add(dungeon);
+            dungeonCache.put(dungeon.getName(), dungeon);
+        }
     }
 
 
