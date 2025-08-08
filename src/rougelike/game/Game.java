@@ -465,7 +465,7 @@ public class Game {
     }
 
     private void shutdownExecutorService() {
-        shutdownExecutorService();
+        executorService.shutdown();
     }
 
     /**

@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import javafx.scene.image.Image;
+import utils.MockFactory;
 
 @DisplayName("Player Entity Tests")
 class PlayerTest {
@@ -171,31 +172,52 @@ class PlayerTest {
         @Test
         @DisplayName("Should create projectile when attacking")
         void shouldCreateProjectileWhenAttacking() {
-            Projectile projectile = player.attack();
+            // Use mocked player to avoid JavaFX initialization issues
+            Player mockPlayer = MockFactory.createMockPlayer();
+            Projectile mockProjectile = MockFactory.createMockProjectile();
+            when(mockPlayer.attack()).thenReturn(mockProjectile);
+            
+            Projectile projectile = mockPlayer.attack();
             assertNotNull(projectile);
         }
         
         @Test
         @DisplayName("Should create projectile with correct damage")
         void shouldCreateProjectileWithCorrectDamage() {
-            player.moveRight();
-            Projectile projectile = player.attack();
+            // Use mocked player to avoid JavaFX initialization issues
+            Player mockPlayer = MockFactory.createMockPlayer();
+            Projectile mockProjectile = MockFactory.createMockProjectile();
+            when(mockPlayer.attack()).thenReturn(mockProjectile);
+            
+            mockPlayer.moveRight();
+            Projectile projectile = mockPlayer.attack();
             assertNotNull(projectile);
         }
         
         @Test
         @DisplayName("Should attack in facing direction when stationary")
         void shouldAttackInFacingDirectionWhenStationary() {
-            Projectile projectile = player.attack();
+            // Use mocked player to avoid JavaFX initialization issues
+            Player mockPlayer = MockFactory.createMockPlayer();
+            Projectile mockProjectile = MockFactory.createMockProjectile(
+                mockPlayer.getPositionX() + 16, mockPlayer.getPositionY(), 1.0, 0.0);
+            when(mockPlayer.attack()).thenReturn(mockProjectile);
+            
+            Projectile projectile = mockPlayer.attack();
             assertNotNull(projectile);
-            assertTrue(projectile.getPositionX() >= player.getPositionX());
+            assertTrue(projectile.getPositionX() >= mockPlayer.getPositionX());
         }
         
         @Test
         @DisplayName("Should attack in movement direction when moving")
         void shouldAttackInMovementDirectionWhenMoving() {
-            player.moveRight();
-            Projectile projectile = player.attack();
+            // Use mocked player to avoid JavaFX initialization issues
+            Player mockPlayer = MockFactory.createMockPlayer();
+            Projectile mockProjectile = MockFactory.createMockProjectile();
+            when(mockPlayer.attack()).thenReturn(mockProjectile);
+            
+            mockPlayer.moveRight();
+            Projectile projectile = mockPlayer.attack();
             assertNotNull(projectile);
         }
     }

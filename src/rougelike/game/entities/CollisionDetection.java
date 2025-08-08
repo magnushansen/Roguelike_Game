@@ -6,8 +6,8 @@ import rougelike.game.GameModel;
 public class CollisionDetection {
     private static final double GAME_BOUNDARY_LEFT = 0 + GameModel.getTileWidth();
     private static final double GAME_BOUNDARY_TOP = 0 + GameModel.getTileHeight();
-    private static final double GAME_BOUNDARY_RIGHT = Global.WINDOW_HEIGHT - GameModel.getTileWidth(); // Example width
-    private static final double GAME_BOUNDARY_BOTTOM = Global.WINDOW_WIDTH - GameModel.getTileHeight(); // Example
+    private static final double GAME_BOUNDARY_RIGHT = Global.WINDOW_WIDTH - GameModel.getTileWidth(); // Example width
+    private static final double GAME_BOUNDARY_BOTTOM = Global.WINDOW_HEIGHT - GameModel.getTileHeight(); // Example
                                                                                                         // height
 
     /**

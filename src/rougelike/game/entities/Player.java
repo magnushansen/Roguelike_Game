@@ -22,7 +22,7 @@ public class Player extends Entity {
     private double facingDirectionX = 1;
     private double facingDirectionY = 0;
     private static final Duration attackSpeed = Duration.ofMillis(500);
-    private static Instant lastEventTime = null;
+    private Instant lastEventTime = null;
     private List<String> inventory;
 
     public Player(double positionX, double positionY, double width, double height, Image idleImage, Image[] movingFrames, Image[] idleFrames, int maxHealth, int damage) {

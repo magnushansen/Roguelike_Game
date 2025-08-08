@@ -45,6 +45,14 @@ run_test_class() {
     
     # Run the test and capture output
     java -cp "$CLASSPATH" \
+        -Djava.awt.headless=true \
+        -Dtestfx.robot=glass \
+        -Dtestfx.headless=true \
+        -Dprism.order=sw \
+        -Dprism.text=t2k \
+        -Dglass.platform=Monocle \
+        -Dmonocle.platform=Headless \
+        -Dprism.verbose=true \
         org.junit.platform.console.ConsoleLauncher \
         --class-path="$CLASSPATH" \
         --select-class="$test_class" \
@@ -60,6 +68,14 @@ run_all_tests() {
     echo -e "${PURPLE}🎯 Running all tests...${NC}"
     
     java -cp "$CLASSPATH" \
+        -Djava.awt.headless=true \
+        -Dtestfx.robot=glass \
+        -Dtestfx.headless=true \
+        -Dprism.order=sw \
+        -Dprism.text=t2k \
+        -Dglass.platform=Monocle \
+        -Dmonocle.platform=Headless \
+        -Dprism.verbose=true \
         org.junit.platform.console.ConsoleLauncher \
         --class-path="$CLASSPATH" \
         --scan-class-path="$TEST_BIN_DIR" \
@@ -76,6 +92,14 @@ run_package_tests() {
     echo -e "${BLUE}📦 Running tests in package: $package${NC}"
     
     java -cp "$CLASSPATH" \
+        -Djava.awt.headless=true \
+        -Dtestfx.robot=glass \
+        -Dtestfx.headless=true \
+        -Dprism.order=sw \
+        -Dprism.text=t2k \
+        -Dglass.platform=Monocle \
+        -Dmonocle.platform=Headless \
+        -Dprism.verbose=true \
         org.junit.platform.console.ConsoleLauncher \
         --class-path="$CLASSPATH" \
         --select-package="$package" \

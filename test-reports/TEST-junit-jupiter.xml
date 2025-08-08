@@ -1,0 +1,994 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="153" skipped="0" failures="0" errors="0" time="2.081" hostname="Magnuss-MacBook-Pro.fritz.box" timestamp="2025-08-03T21:55:14">
+<properties>
+<property name="apple.awt.application.name" value="ConsoleLauncher"/>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.separator" value="/"/>
+<property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+<property name="glass.platform" value="Monocle"/>
+<property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+<property name="java.awt.headless" value="true"/>
+<property name="java.class.path" value="test-bin:bin:lib/byte-buddy-1.14.11.jar:lib/byte-buddy-agent-1.14.11.jar:lib/javafx-swt.jar:lib/javafx.base.jar:lib/javafx.controls.jar:lib/javafx.fxml.jar:lib/javafx.graphics.jar:lib/javafx.media.jar:lib/javafx.swing.jar:lib/javafx.web.jar:lib/junit-jupiter-api-5.10.1.jar:lib/junit-jupiter-engine-5.10.1.jar:lib/junit-platform-console-standalone-1.10.1.jar:lib/junit-platform-launcher-1.10.1.jar:lib/mockito-core-5.8.0.jar"/>
+<property name="java.class.version" value="65.0"/>
+<property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home"/>
+<property name="java.io.tmpdir" value="/var/folders/dh/5vvqz7413x1f6kcr13wzyp780000gn/T/"/>
+<property name="java.library.path" value="/Users/magnushansen/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+<property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+<property name="java.runtime.version" value="21.0.8+12-LTS-250"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="21"/>
+<property name="java.vendor" value="Oracle Corporation"/>
+<property name="java.vendor.url" value="https://java.oracle.com/"/>
+<property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+<property name="java.version" value="21.0.8"/>
+<property name="java.version.date" value="2025-07-15"/>
+<property name="java.vm.compressedOopsMode" value="Zero based"/>
+<property name="java.vm.info" value="mixed mode, sharing"/>
+<property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="21"/>
+<property name="java.vm.vendor" value="Oracle Corporation"/>
+<property name="java.vm.version" value="21.0.8+12-LTS-250"/>
+<property name="javafx.macosx.embedded" value="true"/>
+<property name="javafx.runtime.version" value="17.0.16+2"/>
+<property name="javafx.version" value="17.0.16"/>
+<property name="jdk.debug" value="release"/>
+<property name="line.separator" value="
+"/>
+<property name="monocle.platform" value="Headless"/>
+<property name="native.encoding" value="UTF-8"/>
+<property name="os.arch" value="aarch64"/>
+<property name="os.name" value="Mac OS X"/>
+<property name="os.version" value="15.5"/>
+<property name="path.separator" value=":"/>
+<property name="prism.allowhidpi" value="false"/>
+<property name="prism.order" value="sw"/>
+<property name="prism.text" value="t2k"/>
+<property name="prism.verbose" value="false"/>
+<property name="quantum.multithreaded" value="false"/>
+<property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+<property name="stderr.encoding" value="UTF-8"/>
+<property name="stdout.encoding" value="UTF-8"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home/lib"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+<property name="sun.java.command" value="org.junit.platform.console.ConsoleLauncher --class-path=test-bin:bin:lib/byte-buddy-1.14.11.jar:lib/byte-buddy-agent-1.14.11.jar:lib/javafx-swt.jar:lib/javafx.base.jar:lib/javafx.controls.jar:lib/javafx.fxml.jar:lib/javafx.graphics.jar:lib/javafx.media.jar:lib/javafx.swing.jar:lib/javafx.web.jar:lib/junit-jupiter-api-5.10.1.jar:lib/junit-jupiter-engine-5.10.1.jar:lib/junit-platform-console-standalone-1.10.1.jar:lib/junit-platform-launcher-1.10.1.jar:lib/mockito-core-5.8.0.jar --scan-class-path=test-bin --details=tree --reports-dir=test-reports"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="UTF-8"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="test.mode" value="true"/>
+<property name="testfx.headless" value="true"/>
+<property name="testfx.robot" value="glass"/>
+<property name="user.country" value="FO"/>
+<property name="user.dir" value="/Users/magnushansen/Movies/Roguelike"/>
+<property name="user.home" value="/Users/magnushansen"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="magnushansen"/>
+<property name="user.timezone" value="Atlantic/Faroe"/>
+</properties>
+<testcase name="shouldHandleEmptyDungeonName()" classname="rougelike.game.LoaderIntegrationTest$ErrorHandlingTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:ErrorHandlingTests]/[method:shouldHandleEmptyDungeonName()]
+display-name: Should handle empty dungeon name
+]]></system-out>
+</testcase>
+<testcase name="shouldHaveNonNullClient()" classname="rougelike.ModelTest$InitializationTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:InitializationTests]/[method:shouldHaveNonNullClient()]
+display-name: Should have non-null client
+]]></system-out>
+</testcase>
+<testcase name="shouldCalculateTileWidthBasedOnColumns()" classname="rougelike.game.LoaderIntegrationTest$TileCalculationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:TileCalculationTests]/[method:shouldCalculateTileWidthBasedOnColumns()]
+display-name: Should calculate tile width based on columns
+]]></system-out>
+</testcase>
+<testcase name="shouldInitializeProjectileCorrectly()" classname="rougelike.game.entities.ProjectileTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:InitializationTests]/[method:shouldInitializeProjectileCorrectly()]
+display-name: Should initialize projectile with correct values
+]]></system-out>
+</testcase>
+<testcase name="shouldUpdateAnimationCorrectly()" classname="rougelike.game.entities.EnemyTest$AnimationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:AnimationTests]/[method:shouldUpdateAnimationCorrectly()]
+display-name: Should update animation correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldInteractWithEnemyCorrectly()" classname="rougelike.game.entities.ProjectileTest$InteractionTests" time="0.011">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:InteractionTests]/[method:shouldInteractWithEnemyCorrectly()]
+display-name: Should interact with enemy correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleEmptyDungeonList()" classname="rougelike.ModelTest$DungeonManagementTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:DungeonManagementTests]/[method:shouldHandleEmptyDungeonList()]
+display-name: Should handle empty dungeon list
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleVerySmallTimeIntervals()" classname="rougelike.game.entities.ProjectileTest$PhysicsTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:PhysicsTests]/[method:shouldHandleVerySmallTimeIntervals()]
+display-name: Should handle very small time intervals
+]]></system-out>
+</testcase>
+<testcase name="shouldDetectCollisionWhenEntitiesOverlap()" classname="rougelike.game.entities.CollisionDetectionTest$AabbCollisionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:AabbCollisionTests]/[method:shouldDetectCollisionWhenEntitiesOverlap()]
+display-name: Should detect collision when entities overlap
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleInvalidLevelIndicesGracefully()" classname="rougelike.game.LoaderIntegrationTest$ErrorHandlingTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:ErrorHandlingTests]/[method:shouldHandleInvalidLevelIndicesGracefully()]
+display-name: Should handle invalid level indices gracefully
+]]></system-out>
+</testcase>
+<testcase name="shouldInteractWithPlayerCorrectly()" classname="rougelike.game.entities.EnemyTest$InteractionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:InteractionTests]/[method:shouldInteractWithPlayerCorrectly()]
+display-name: Should interact with player correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldLoadBasicDungeonSuccessfully()" classname="rougelike.game.LoaderIntegrationTest$DungeonLoadingTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:DungeonLoadingTests]/[method:shouldLoadBasicDungeonSuccessfully()]
+display-name: Should load basic dungeon successfully
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullLayoutInToString()" classname="rougelike.game.dungeon.DungeonTest$ToStringTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:ToStringTests]/[method:shouldHandleNullLayoutInToString()]
+display-name: Should handle null layout in toString
+]]></system-out>
+</testcase>
+<testcase name="shouldDieWhenTakingLethalDamage()" classname="rougelike.game.entities.EnemyTest$HealthAndCombatTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:HealthAndCombatTests]/[method:shouldDieWhenTakingLethalDamage()]
+display-name: Should die when taking lethal damage
+]]></system-out>
+</testcase>
+<testcase name="shouldUndoMoveCorrectly()" classname="rougelike.game.entities.EnemyTest$MovementAndAITests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:MovementAndAITests]/[method:shouldUndoMoveCorrectly()]
+display-name: Should undo move correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleSingleCellDungeons()" classname="rougelike.game.LoaderIntegrationTest$TileCalculationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:TileCalculationTests]/[method:shouldHandleSingleCellDungeons()]
+display-name: Should handle single cell dungeons
+]]></system-out>
+</testcase>
+<testcase name="shouldDieWhenHealthReachesZero()" classname="rougelike.game.entities.EnemyTest$HealthAndCombatTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:HealthAndCombatTests]/[method:shouldDieWhenHealthReachesZero()]
+display-name: Should die when health reaches zero
+]]></system-out>
+</testcase>
+<testcase name="shouldAllowLayoutModificationThroughReference()" classname="rougelike.game.dungeon.DungeonTest$GetterTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:GetterTests]/[method:shouldAllowLayoutModificationThroughReference()]
+display-name: Should allow layout modification through reference
+]]></system-out>
+</testcase>
+<testcase name="shouldSetAndGetPlayerCorrectly()" classname="rougelike.game.GameModelTest$PlayerManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:PlayerManagementTests]/[method:shouldSetAndGetPlayerCorrectly()]
+display-name: Should set and get player correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleDisconnectionGracefully()" classname="rougelike.networking.ClientTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.networking.ClientTest]/[method:shouldHandleDisconnectionGracefully()]
+display-name: Should handle disconnection gracefully
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleEmptyLayout()" classname="rougelike.game.dungeon.DungeonTest$ConstructorTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:ConstructorTests]/[method:shouldHandleEmptyLayout()]
+display-name: Should handle empty layout
+]]></system-out>
+</testcase>
+<testcase name="shouldReturnCorrectLayout()" classname="rougelike.game.dungeon.DungeonTest$GetterTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:GetterTests]/[method:shouldReturnCorrectLayout()]
+display-name: Should return correct layout
+]]></system-out>
+</testcase>
+<testcase name="shouldSetTileDimensionsCorrectly()" classname="rougelike.game.LoaderIntegrationTest$DungeonLoadingTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:DungeonLoadingTests]/[method:shouldSetTileDimensionsCorrectly()]
+display-name: Should set tile dimensions correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldAllowDuplicateEntities()" classname="rougelike.game.GameModelTest$CollectionBehaviorTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:CollectionBehaviorTests]/[method:shouldAllowDuplicateEntities()]
+display-name: Should allow duplicate entities
+]]></system-out>
+</testcase>
+<testcase name="shouldDetectCollisionWhenEntitiesTouchAtEdge()" classname="rougelike.game.entities.CollisionDetectionTest$AabbCollisionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:AabbCollisionTests]/[method:shouldDetectCollisionWhenEntitiesTouchAtEdge()]
+display-name: Should detect collision when entities touch at edge
+]]></system-out>
+</testcase>
+<testcase name="shouldMoveLeftCorrectly()" classname="rougelike.game.entities.PlayerTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:MovementTests]/[method:shouldMoveLeftCorrectly()]
+display-name: Should move left correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleConnectionToNonExistentServer()" classname="rougelike.networking.ClientTest" time="0.017">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.networking.ClientTest]/[method:shouldHandleConnectionToNonExistentServer()]
+display-name: Should handle connection to non-existent server
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullCommunityMenuModel()" classname="rougelike.networking.ClientTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.networking.ClientTest]/[nested-class:InitializationTests]/[method:shouldHandleNullCommunityMenuModel()]
+display-name: Should handle null community menu model
+]]></system-out>
+</testcase>
+<testcase name="shouldNotHealAboveMaxHealth()" classname="rougelike.game.entities.PlayerTest$HealthManagementTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:HealthManagementTests]/[method:shouldNotHealAboveMaxHealth()]
+display-name: Should not heal above max health
+]]></system-out>
+</testcase>
+<testcase name="shouldMoveTowardsPlayerWhenInDetectionRange()" classname="rougelike.game.entities.EnemyTest$MovementAndAITests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:MovementAndAITests]/[method:shouldMoveTowardsPlayerWhenInDetectionRange()]
+display-name: Should move towards player when in detection range
+]]></system-out>
+</testcase>
+<testcase name="shouldHaveDamageImmunityPeriod()" classname="rougelike.game.entities.PlayerTest$HealthManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:HealthManagementTests]/[method:shouldHaveDamageImmunityPeriod()]
+display-name: Should have damage immunity period
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleZeroTileDimensions()" classname="rougelike.game.GameModelTest$TileDimensionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:TileDimensionTests]/[method:shouldHandleZeroTileDimensions()]
+display-name: Should handle zero tile dimensions
+]]></system-out>
+</testcase>
+<testcase name="shouldUpdateGameModelWithLoadedEntities()" classname="rougelike.game.LoaderIntegrationTest$IntegrationWithGameModelTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:IntegrationWithGameModelTests]/[method:shouldUpdateGameModelWithLoadedEntities()]
+display-name: Should update game model with loaded entities
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullDungeonSelection()" classname="rougelike.ModelTest$PropertyManagementTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:PropertyManagementTests]/[method:shouldHandleNullDungeonSelection()]
+display-name: Should handle null dungeon selection
+]]></system-out>
+</testcase>
+<testcase name="shouldMaintainConstantVelocity()" classname="rougelike.game.entities.ProjectileTest$PhysicsTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:PhysicsTests]/[method:shouldMaintainConstantVelocity()]
+display-name: Should maintain constant velocity
+]]></system-out>
+</testcase>
+<testcase name="shouldInitializeWithDefaultValues()" classname="rougelike.ModelTest$InitializationTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:InitializationTests]/[method:shouldInitializeWithDefaultValues()]
+display-name: Should initialize with default values
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleZeroTimeElapsed()" classname="rougelike.game.entities.ProjectileTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:MovementTests]/[method:shouldHandleZeroTimeElapsed()]
+display-name: Should handle zero time elapsed
+]]></system-out>
+</testcase>
+<testcase name="shouldOccupySpaceByDefault()" classname="rougelike.game.entities.EnemyTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:InitializationTests]/[method:shouldOccupySpaceByDefault()]
+display-name: Should occupy space by default
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleZeroDirection()" classname="rougelike.game.entities.ProjectileTest$EdgeCaseTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:EdgeCaseTests]/[method:shouldHandleZeroDirection()]
+display-name: Should handle zero direction
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleRandomMovementWhenPlayerOutOfRange()" classname="rougelike.game.entities.EnemyTest$MovementAndAITests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:MovementAndAITests]/[method:shouldHandleRandomMovementWhenPlayerOutOfRange()]
+display-name: Should handle random movement when player out of range
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleEmptyName()" classname="rougelike.game.dungeon.DungeonTest$ConstructorTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:ConstructorTests]/[method:shouldHandleEmptyName()]
+display-name: Should handle empty name
+]]></system-out>
+</testcase>
+<testcase name="shouldInitializeEnemyCorrectly()" classname="rougelike.game.entities.EnemyTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:InitializationTests]/[method:shouldInitializeEnemyCorrectly()]
+display-name: Should initialize enemy with correct values
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNegativeTileDimensions()" classname="rougelike.game.GameModelTest$TileDimensionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:TileDimensionTests]/[method:shouldHandleNegativeTileDimensions()]
+display-name: Should handle negative tile dimensions
+]]></system-out>
+</testcase>
+<testcase name="shouldNotOccupySpace()" classname="rougelike.game.entities.ProjectileTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:InitializationTests]/[method:shouldNotOccupySpace()]
+display-name: Should not occupy space
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullLayout()" classname="rougelike.game.dungeon.DungeonTest$ConstructorTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:ConstructorTests]/[method:shouldHandleNullLayout()]
+display-name: Should handle null layout
+]]></system-out>
+</testcase>
+<testcase name="shouldReturnReferenceToOriginalLayout()" classname="rougelike.game.dungeon.DungeonTest$GetterTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:GetterTests]/[method:shouldReturnReferenceToOriginalLayout()]
+display-name: Should return reference to original layout
+]]></system-out>
+</testcase>
+<testcase name="shouldHealPlayerCorrectly()" classname="rougelike.game.entities.PlayerTest$HealthManagementTests" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:HealthManagementTests]/[method:shouldHealPlayerCorrectly()]
+display-name: Should heal player correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldHandlePlayerReplacement()" classname="rougelike.game.GameModelTest$PlayerManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:PlayerManagementTests]/[method:shouldHandlePlayerReplacement()]
+display-name: Should handle player replacement
+]]></system-out>
+</testcase>
+<testcase name="shouldHandlePlayerAtSamePosition()" classname="rougelike.game.entities.EnemyTest$EdgeCaseTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:EdgeCaseTests]/[method:shouldHandlePlayerAtSamePosition()]
+display-name: Should handle player at same position
+]]></system-out>
+</testcase>
+<testcase name="shouldHaveDamageImmunityPeriod()" classname="rougelike.game.entities.EnemyTest$HealthAndCombatTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:HealthAndCombatTests]/[method:shouldHaveDamageImmunityPeriod()]
+display-name: Should have damage immunity period
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleServerStartupGracefully()" classname="Serverapp.ServerTest$ServerLifecycleTests" time="0.102">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:Serverapp.ServerTest]/[nested-class:ServerLifecycleTests]/[method:shouldHandleServerStartupGracefully()]
+display-name: Should handle server startup gracefully
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleMultipleEntities()" classname="rougelike.game.GameModelTest$EntityManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:EntityManagementTests]/[method:shouldHandleMultipleEntities()]
+display-name: Should handle multiple entities
+]]></system-out>
+</testcase>
+<testcase name="shouldBeSymmetric()" classname="rougelike.game.entities.CollisionDetectionTest$AabbCollisionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:AabbCollisionTests]/[method:shouldBeSymmetric()]
+display-name: Should be symmetric
+]]></system-out>
+</testcase>
+<testcase name="shouldUpdateAnimationWhenIdle()" classname="rougelike.game.entities.PlayerTest$AnimationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:AnimationTests]/[method:shouldUpdateAnimationWhenIdle()]
+display-name: Should update animation when idle
+]]></system-out>
+</testcase>
+<testcase name="shouldHandlePortAlreadyInUseGracefully()" classname="Serverapp.ServerTest$ServerLifecycleTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:Serverapp.ServerTest]/[nested-class:ServerLifecycleTests]/[method:shouldHandlePortAlreadyInUseGracefully()]
+display-name: Should handle port already in use gracefully
+]]></system-out>
+</testcase>
+<testcase name="shouldInitializeAsDisconnected()" classname="rougelike.networking.ClientTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.networking.ClientTest]/[nested-class:InitializationTests]/[method:shouldInitializeAsDisconnected()]
+display-name: Should initialize as disconnected
+]]></system-out>
+</testcase>
+<testcase name="shouldLoadAvailableBackgrounds()" classname="rougelike.ModelTest$BackgroundManagementTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:BackgroundManagementTests]/[method:shouldLoadAvailableBackgrounds()]
+display-name: Should load available backgrounds
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleSpecialCharactersInName()" classname="rougelike.game.dungeon.DungeonTest$EdgeCasesTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:EdgeCasesTests]/[method:shouldHandleSpecialCharactersInName()]
+display-name: Should handle special characters in name
+]]></system-out>
+</testcase>
+<testcase name="shouldCreateFloorEntitiesForEmptySpaces()" classname="rougelike.game.LoaderIntegrationTest$EntityCreationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:EntityCreationTests]/[method:shouldCreateFloorEntitiesForEmptySpaces()]
+display-name: Should create floor entities for empty spaces
+]]></system-out>
+</testcase>
+<testcase name="shouldGetAndSetActiveMenu()" classname="rougelike.ModelTest$PropertyManagementTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:PropertyManagementTests]/[method:shouldGetAndSetActiveMenu()]
+display-name: Should get and set active menu
+]]></system-out>
+</testcase>
+<testcase name="shouldResolveCollisionByMovingEntity()" classname="rougelike.game.entities.CollisionDetectionTest$CollisionResolutionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:CollisionResolutionTests]/[method:shouldResolveCollisionByMovingEntity()]
+display-name: Should resolve collision by moving entity
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullEntityInteraction()" classname="rougelike.game.entities.ProjectileTest$InteractionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:InteractionTests]/[method:shouldHandleNullEntityInteraction()]
+display-name: Should handle null entity interaction
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNegativeDirection()" classname="rougelike.game.entities.ProjectileTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:MovementTests]/[method:shouldHandleNegativeDirection()]
+display-name: Should handle negative direction
+]]></system-out>
+</testcase>
+<testcase name="shouldSetAndGetTileWidthCorrectly()" classname="rougelike.game.GameModelTest$TileDimensionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:TileDimensionTests]/[method:shouldSetAndGetTileWidthCorrectly()]
+display-name: Should set and get tile width correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldClearPreviousDungeonData()" classname="rougelike.game.LoaderIntegrationTest$DungeonLoadingTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:DungeonLoadingTests]/[method:shouldClearPreviousDungeonData()]
+display-name: Should clear previous dungeon data
+]]></system-out>
+</testcase>
+<testcase name="shouldMoveRightCorrectly()" classname="rougelike.game.entities.PlayerTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:MovementTests]/[method:shouldMoveRightCorrectly()]
+display-name: Should move right correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldSupportCollectionModifications()" classname="rougelike.game.GameModelTest$CollectionBehaviorTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:CollectionBehaviorTests]/[method:shouldSupportCollectionModifications()]
+display-name: Should support collection modifications
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleMultipleAnimationUpdates()" classname="rougelike.game.entities.EnemyTest$AnimationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:AnimationTests]/[method:shouldHandleMultipleAnimationUpdates()]
+display-name: Should handle multiple animation updates
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleIdenticalPositions()" classname="rougelike.game.entities.CollisionDetectionTest$CollisionResolutionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:CollisionResolutionTests]/[method:shouldHandleIdenticalPositions()]
+display-name: Should handle identical positions
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleMissingAssetsDirectoryGracefully()" classname="rougelike.ModelTest$FileSystemTests" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:FileSystemTests]/[method:shouldHandleMissingAssetsDirectoryGracefully()]
+display-name: Should handle missing assets directory gracefully
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleLargeTimeIntervals()" classname="rougelike.game.entities.ProjectileTest$PhysicsTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:PhysicsTests]/[method:shouldHandleLargeTimeIntervals()]
+display-name: Should handle large time intervals
+]]></system-out>
+</testcase>
+<testcase name="shouldMaintainSameClientInstance()" classname="rougelike.ModelTest$ClientIntegrationTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:ClientIntegrationTests]/[method:shouldMaintainSameClientInstance()]
+display-name: Should maintain same client instance
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullMenuState()" classname="rougelike.ModelTest$PropertyManagementTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:PropertyManagementTests]/[method:shouldHandleNullMenuState()]
+display-name: Should handle null menu state
+]]></system-out>
+</testcase>
+<testcase name="shouldInitializeWithEmptyEntityCollections()" classname="rougelike.game.GameModelTest$EntityManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:EntityManagementTests]/[method:shouldInitializeWithEmptyEntityCollections()]
+display-name: Should initialize with empty entity collections
+]]></system-out>
+</testcase>
+<testcase name="shouldMoveDownCorrectly()" classname="rougelike.game.entities.PlayerTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:MovementTests]/[method:shouldMoveDownCorrectly()]
+display-name: Should move down correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleSendingDungeonWhenDisconnected()" classname="rougelike.networking.ClientTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.networking.ClientTest]/[method:shouldHandleSendingDungeonWhenDisconnected()]
+display-name: Should handle sending dungeon when disconnected
+]]></system-out>
+</testcase>
+<testcase name="shouldCreateProjectileWithCorrectDamage()" classname="rougelike.game.entities.PlayerTest$CombatTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:CombatTests]/[method:shouldCreateProjectileWithCorrectDamage()]
+display-name: Should create projectile with correct damage
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullGameModelGracefully()" classname="rougelike.game.LoaderIntegrationTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:InitializationTests]/[method:shouldHandleNullGameModelGracefully()]
+display-name: Should handle null game model gracefully
+]]></system-out>
+</testcase>
+<testcase name="shouldMaintainAvailableDungeonsList()" classname="rougelike.ModelTest$DungeonManagementTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:DungeonManagementTests]/[method:shouldMaintainAvailableDungeonsList()]
+display-name: Should maintain available dungeons list
+]]></system-out>
+</testcase>
+<testcase name="shouldResolveHorizontalCollisionCorrectly()" classname="rougelike.game.entities.CollisionDetectionTest$CollisionResolutionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:CollisionResolutionTests]/[method:shouldResolveHorizontalCollisionCorrectly()]
+display-name: Should resolve horizontal collision correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleFileSystemErrorsGracefully()" classname="rougelike.ModelTest$FileSystemTests" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:FileSystemTests]/[method:shouldHandleFileSystemErrorsGracefully()]
+display-name: Should handle file system errors gracefully
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullDungeonSelection()" classname="rougelike.game.LoaderIntegrationTest$ErrorHandlingTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:ErrorHandlingTests]/[method:shouldHandleNullDungeonSelection()]
+display-name: Should handle null dungeon selection
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleAllGuiStateTransitions()" classname="rougelike.ModelTest$GuiStateIntegrationTests" time="0.611">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:GuiStateIntegrationTests]/[method:shouldHandleAllGuiStateTransitions()]
+display-name: Should handle all GUI state transitions
+]]></system-out>
+</testcase>
+<testcase name="shouldAcceptCommunityMenuModel()" classname="rougelike.networking.ClientTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.networking.ClientTest]/[nested-class:InitializationTests]/[method:shouldAcceptCommunityMenuModel()]
+display-name: Should accept community menu model
+]]></system-out>
+</testcase>
+<testcase name="shouldInitializeWithNullPlayer()" classname="rougelike.game.GameModelTest$PlayerManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:PlayerManagementTests]/[method:shouldInitializeWithNullPlayer()]
+display-name: Should initialize with null player
+]]></system-out>
+</testcase>
+<testcase name="shouldInitializeLoaderWithValidDependencies()" classname="rougelike.game.LoaderIntegrationTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:InitializationTests]/[method:shouldInitializeLoaderWithValidDependencies()]
+display-name: Should initialize loader with valid dependencies
+]]></system-out>
+</testcase>
+<testcase name="shouldGenerateNonNullStringRepresentation()" classname="rougelike.game.dungeon.DungeonTest$ToStringTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:ToStringTests]/[method:shouldGenerateNonNullStringRepresentation()]
+display-name: Should generate non-null string representation
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleRequestingDungeonWhenDisconnected()" classname="rougelike.networking.ClientTest" time="0.009">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.networking.ClientTest]/[method:shouldHandleRequestingDungeonWhenDisconnected()]
+display-name: Should handle requesting dungeon when disconnected
+]]></system-out>
+</testcase>
+<testcase name="shouldReturnCorrectName()" classname="rougelike.game.dungeon.DungeonTest$GetterTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:GetterTests]/[method:shouldReturnCorrectName()]
+display-name: Should return correct name
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleDiagonalMovement()" classname="rougelike.game.entities.ProjectileTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:MovementTests]/[method:shouldHandleDiagonalMovement()]
+display-name: Should handle diagonal movement
+]]></system-out>
+</testcase>
+<testcase name="shouldResolveVerticalCollisionCorrectly()" classname="rougelike.game.entities.CollisionDetectionTest$CollisionResolutionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:CollisionResolutionTests]/[method:shouldResolveVerticalCollisionCorrectly()]
+display-name: Should resolve vertical collision correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleZeroSpeed()" classname="rougelike.game.entities.ProjectileTest$EdgeCaseTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:EdgeCaseTests]/[method:shouldHandleZeroSpeed()]
+display-name: Should handle zero speed
+]]></system-out>
+</testcase>
+<testcase name="shouldStartWithMainMenuState()" classname="rougelike.ModelTest$GuiStateIntegrationTests" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:GuiStateIntegrationTests]/[method:shouldStartWithMainMenuState()]
+display-name: Should start with main menu state
+]]></system-out>
+</testcase>
+<testcase name="shouldSetAndGetTileHeightCorrectly()" classname="rougelike.game.GameModelTest$TileDimensionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:TileDimensionTests]/[method:shouldSetAndGetTileHeightCorrectly()]
+display-name: Should set and get tile height correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldMaintainEntityOrderInCollections()" classname="rougelike.game.GameModelTest$CollectionBehaviorTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:CollectionBehaviorTests]/[method:shouldMaintainEntityOrderInCollections()]
+display-name: Should maintain entity order in collections
+]]></system-out>
+</testcase>
+<testcase name="shouldDieWhenHealthReachesZero()" classname="rougelike.game.entities.PlayerTest$HealthManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:HealthManagementTests]/[method:shouldDieWhenHealthReachesZero()]
+display-name: Should die when health reaches zero
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullModelGracefully()" classname="rougelike.game.LoaderIntegrationTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:InitializationTests]/[method:shouldHandleNullModelGracefully()]
+display-name: Should handle null model gracefully
+]]></system-out>
+</testcase>
+<testcase name="shouldNotMoveTowardsPlayerWhenOutOfDetectionRange()" classname="rougelike.game.entities.EnemyTest$MovementAndAITests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:MovementAndAITests]/[method:shouldNotMoveTowardsPlayerWhenOutOfDetectionRange()]
+display-name: Should not move towards player when out of detection range
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleMultiLevelDungeons()" classname="rougelike.game.dungeon.DungeonTest$LayoutStructureTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:LayoutStructureTests]/[method:shouldHandleMultiLevelDungeons()]
+display-name: Should handle multi-level dungeons
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullEntitiesGracefully()" classname="rougelike.game.GameModelTest$EntityManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:EntityManagementTests]/[method:shouldHandleNullEntitiesGracefully()]
+display-name: Should handle null entities gracefully
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullName()" classname="rougelike.game.dungeon.DungeonTest$ConstructorTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:ConstructorTests]/[method:shouldHandleNullName()]
+display-name: Should handle null name
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleIrregularDungeonShapes()" classname="rougelike.game.LoaderIntegrationTest$TileCalculationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:TileCalculationTests]/[method:shouldHandleIrregularDungeonShapes()]
+display-name: Should handle irregular dungeon shapes
+]]></system-out>
+</testcase>
+<testcase name="shouldAddEntityToFloorEntitiesCollection()" classname="rougelike.game.GameModelTest$EntityManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:EntityManagementTests]/[method:shouldAddEntityToFloorEntitiesCollection()]
+display-name: Should add entity to floor entities collection
+]]></system-out>
+</testcase>
+<testcase name="shouldAttackInMovementDirectionWhenMoving()" classname="rougelike.game.entities.PlayerTest$CombatTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:CombatTests]/[method:shouldAttackInMovementDirectionWhenMoving()]
+display-name: Should attack in movement direction when moving
+]]></system-out>
+</testcase>
+<testcase name="shouldGetAndSetSelectedDungeon()" classname="rougelike.ModelTest$PropertyManagementTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:PropertyManagementTests]/[method:shouldGetAndSetSelectedDungeon()]
+display-name: Should get and set selected dungeon
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleDifferentLevelIndices()" classname="rougelike.game.LoaderIntegrationTest$DungeonLoadingTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:DungeonLoadingTests]/[method:shouldHandleDifferentLevelIndices()]
+display-name: Should handle different level indices
+]]></system-out>
+</testcase>
+<testcase name="shouldNotThrowExceptionWhenRendering()" classname="rougelike.game.entities.ProjectileTest$RenderingTests" time="0.041">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:RenderingTests]/[method:shouldNotThrowExceptionWhenRendering()]
+display-name: Should not throw exception when rendering
+]]></system-out>
+</testcase>
+<testcase name="shouldTakeDamageCorrectly()" classname="rougelike.game.entities.EnemyTest$HealthAndCombatTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:HealthAndCombatTests]/[method:shouldTakeDamageCorrectly()]
+display-name: Should take damage correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNegativeTimeElapsed()" classname="rougelike.game.entities.ProjectileTest$EdgeCaseTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:EdgeCaseTests]/[method:shouldHandleNegativeTimeElapsed()]
+display-name: Should handle negative time elapsed
+]]></system-out>
+</testcase>
+<testcase name="shouldCreateProjectileWhenAttacking()" classname="rougelike.game.entities.PlayerTest$CombatTests" time="0.014">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:CombatTests]/[method:shouldCreateProjectileWhenAttacking()]
+display-name: Should create projectile when attacking
+]]></system-out>
+</testcase>
+<testcase name="shouldCalculateTileHeightBasedOnRows()" classname="rougelike.game.LoaderIntegrationTest$TileCalculationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.LoaderIntegrationTest]/[nested-class:TileCalculationTests]/[method:shouldCalculateTileHeightBasedOnRows()]
+display-name: Should calculate tile height based on rows
+]]></system-out>
+</testcase>
+<testcase name="shouldIncludeLayoutInformationInStringRepresentation()" classname="rougelike.game.dungeon.DungeonTest$ToStringTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:ToStringTests]/[method:shouldIncludeLayoutInformationInStringRepresentation()]
+display-name: Should include layout information in string representation
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleLargeNumberOfEntities()" classname="rougelike.game.GameModelTest$MemoryManagementTests" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:MemoryManagementTests]/[method:shouldHandleLargeNumberOfEntities()]
+display-name: Should handle large number of entities
+]]></system-out>
+</testcase>
+<testcase name="shouldDetectCollisionWhenOneEntityIsInsideAnother()" classname="rougelike.game.entities.CollisionDetectionTest$AabbCollisionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:AabbCollisionTests]/[method:shouldDetectCollisionWhenOneEntityIsInsideAnother()]
+display-name: Should detect collision when one entity is inside another
+]]></system-out>
+</testcase>
+<testcase name="shouldInitializePlayerCorrectly()" classname="rougelike.game.entities.PlayerTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:InitializationTests]/[method:shouldInitializePlayerCorrectly()]
+display-name: Should initialize player with correct values
+]]></system-out>
+</testcase>
+<testcase name="shouldChooseMinimumOverlapDirection()" classname="rougelike.game.entities.CollisionDetectionTest$CollisionResolutionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:CollisionResolutionTests]/[method:shouldChooseMinimumOverlapDirection()]
+display-name: Should choose minimum overlap direction
+]]></system-out>
+</testcase>
+<testcase name="shouldReturnEmptyInteractionForNonPlayerEntities()" classname="rougelike.game.entities.EnemyTest$InteractionTests" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:InteractionTests]/[method:shouldReturnEmptyInteractionForNonPlayerEntities()]
+display-name: Should return empty interaction for non-player entities
+]]></system-out>
+</testcase>
+<testcase name="shouldMoveUpCorrectly()" classname="rougelike.game.entities.PlayerTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:MovementTests]/[method:shouldMoveUpCorrectly()]
+display-name: Should move up correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldTakeDamageCorrectly()" classname="rougelike.game.entities.PlayerTest$HealthManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:HealthManagementTests]/[method:shouldTakeDamageCorrectly()]
+display-name: Should take damage correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldMoveCorrectDistanceBasedOnTime()" classname="rougelike.game.entities.ProjectileTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:MovementTests]/[method:shouldMoveCorrectDistanceBasedOnTime()]
+display-name: Should move correct distance based on time
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleZeroSizedEntities()" classname="rougelike.game.entities.CollisionDetectionTest$AabbCollisionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:AabbCollisionTests]/[method:shouldHandleZeroSizedEntities()]
+display-name: Should handle zero-sized entities
+]]></system-out>
+</testcase>
+<testcase name="shouldReturnEmptyInteractionForNonEnemyEntities()" classname="rougelike.game.entities.ProjectileTest$InteractionTests" time="0.015">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:InteractionTests]/[method:shouldReturnEmptyInteractionForNonEnemyEntities()]
+display-name: Should return empty interaction for non-enemy entities
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleIrregularLayouts()" classname="rougelike.game.dungeon.DungeonTest$LayoutStructureTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:LayoutStructureTests]/[method:shouldHandleIrregularLayouts()]
+display-name: Should handle irregular layouts
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleDiagonalMovement()" classname="rougelike.game.entities.PlayerTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:MovementTests]/[method:shouldHandleDiagonalMovement()]
+display-name: Should handle diagonal movement
+]]></system-out>
+</testcase>
+<testcase name="shouldAllowEntityCollectionClearing()" classname="rougelike.game.GameModelTest$MemoryManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:MemoryManagementTests]/[method:shouldAllowEntityCollectionClearing()]
+display-name: Should allow entity collection clearing
+]]></system-out>
+</testcase>
+<testcase name="shouldInitializeAvailableDungeonsList()" classname="rougelike.ModelTest$InitializationTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:InitializationTests]/[method:shouldInitializeAvailableDungeonsList()]
+display-name: Should initialize available dungeons list
+]]></system-out>
+</testcase>
+<testcase name="shouldCreateDungeonWithValidParameters()" classname="rougelike.game.dungeon.DungeonTest$ConstructorTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:ConstructorTests]/[method:shouldCreateDungeonWithValidParameters()]
+display-name: Should create dungeon with valid parameters
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleDifferentTileDimensions()" classname="rougelike.game.GameModelTest$TileDimensionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:TileDimensionTests]/[method:shouldHandleDifferentTileDimensions()]
+display-name: Should handle different tile dimensions
+]]></system-out>
+</testcase>
+<testcase name="shouldAttackInFacingDirectionWhenStationary()" classname="rougelike.game.entities.PlayerTest$CombatTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:CombatTests]/[method:shouldAttackInFacingDirectionWhenStationary()]
+display-name: Should attack in facing direction when stationary
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleZeroTimeElapsedInMovement()" classname="rougelike.game.entities.EnemyTest$EdgeCaseTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:EdgeCaseTests]/[method:shouldHandleZeroTimeElapsedInMovement()]
+display-name: Should handle zero time elapsed in movement
+]]></system-out>
+</testcase>
+<testcase name="shouldStopMovingWhenStopMethodsCalled()" classname="rougelike.game.entities.PlayerTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:MovementTests]/[method:shouldStopMovingWhenStopMethodsCalled()]
+display-name: Should stop moving when stop methods called
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleEntitiesWithDifferentSizes()" classname="rougelike.game.entities.CollisionDetectionTest$AabbCollisionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:AabbCollisionTests]/[method:shouldHandleEntitiesWithDifferentSizes()]
+display-name: Should handle entities with different sizes
+]]></system-out>
+</testcase>
+<testcase name="shouldAllowDungeonListModifications()" classname="rougelike.ModelTest$DungeonManagementTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:DungeonManagementTests]/[method:shouldAllowDungeonListModifications()]
+display-name: Should allow dungeon list modifications
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNegativeDamage()" classname="rougelike.game.entities.EnemyTest$EdgeCaseTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:EdgeCaseTests]/[method:shouldHandleNegativeDamage()]
+display-name: Should handle negative damage
+]]></system-out>
+</testcase>
+<testcase name="shouldCreateServerInstanceSuccessfully()" classname="Serverapp.ServerTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:Serverapp.ServerTest]/[method:shouldCreateServerInstanceSuccessfully()]
+display-name: Should create server instance successfully
+]]></system-out>
+</testcase>
+<testcase name="shouldAddEntityToEntitiesCollection()" classname="rougelike.game.GameModelTest$EntityManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:EntityManagementTests]/[method:shouldAddEntityToEntitiesCollection()]
+display-name: Should add entity to entities collection
+]]></system-out>
+</testcase>
+<testcase name="shouldCreateClientInstanceSuccessfully()" classname="rougelike.networking.ClientTest$InitializationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.networking.ClientTest]/[nested-class:InitializationTests]/[method:shouldCreateClientInstanceSuccessfully()]
+display-name: Should create client instance successfully
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleBasicEdgeCases()" classname="rougelike.game.entities.CollisionDetectionTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[method:shouldHandleBasicEdgeCases()]
+display-name: Should handle basic edge cases
+]]></system-out>
+</testcase>
+<testcase name="shouldNotDetectCollisionWhenEntitiesDontOverlap()" classname="rougelike.game.entities.CollisionDetectionTest$AabbCollisionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.CollisionDetectionTest]/[nested-class:AabbCollisionTests]/[method:shouldNotDetectCollisionWhenEntitiesDontOverlap()]
+display-name: Should not detect collision when entities don't overlap
+]]></system-out>
+</testcase>
+<testcase name="shouldUpdateAnimationWhenMoving()" classname="rougelike.game.entities.PlayerTest$AnimationTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.PlayerTest]/[nested-class:AnimationTests]/[method:shouldUpdateAnimationWhenMoving()]
+display-name: Should update animation when moving
+]]></system-out>
+</testcase>
+<testcase name="shouldCalculateDistanceToPlayerCorrectly()" classname="rougelike.game.entities.EnemyTest$MovementAndAITests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.EnemyTest]/[nested-class:MovementAndAITests]/[method:shouldCalculateDistanceToPlayerCorrectly()]
+display-name: Should calculate distance to player correctly
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleServerStartupGracefully()" classname="Serverapp.ServerTest" time="1.114">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:Serverapp.ServerTest]/[method:shouldHandleServerStartupGracefully()]
+display-name: Should handle server startup gracefully
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleModeratelySizedDungeons()" classname="rougelike.game.dungeon.DungeonTest$LayoutStructureTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:LayoutStructureTests]/[method:shouldHandleModeratelySizedDungeons()]
+display-name: Should handle moderately sized dungeons
+]]></system-out>
+</testcase>
+<testcase name="shouldMoveInCorrectDirection()" classname="rougelike.game.entities.ProjectileTest$MovementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.entities.ProjectileTest]/[nested-class:MovementTests]/[method:shouldMoveInCorrectDirection()]
+display-name: Should move in correct direction
+]]></system-out>
+</testcase>
+<testcase name="shouldIncludeDungeonNameInStringRepresentation()" classname="rougelike.game.dungeon.DungeonTest$ToStringTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:ToStringTests]/[method:shouldIncludeDungeonNameInStringRepresentation()]
+display-name: Should include dungeon name in string representation
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullPlayerAssignment()" classname="rougelike.game.GameModelTest$PlayerManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:PlayerManagementTests]/[method:shouldHandleNullPlayerAssignment()]
+display-name: Should handle null player assignment
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleConcurrentEntityAdditions()" classname="rougelike.game.GameModelTest$ThreadSafetyTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:ThreadSafetyTests]/[method:shouldHandleConcurrentEntityAdditions()]
+display-name: Should handle concurrent entity additions
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleNullNameInToString()" classname="rougelike.game.dungeon.DungeonTest$ToStringTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:ToStringTests]/[method:shouldHandleNullNameInToString()]
+display-name: Should handle null name in toString
+]]></system-out>
+</testcase>
+<testcase name="shouldMaintainStaticTileDimensionsAcrossInstances()" classname="rougelike.game.GameModelTest$TileDimensionTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:TileDimensionTests]/[method:shouldMaintainStaticTileDimensionsAcrossInstances()]
+display-name: Should maintain static tile dimensions across instances
+]]></system-out>
+</testcase>
+<testcase name="shouldReturnObservableLists()" classname="rougelike.game.GameModelTest$EntityManagementTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.GameModelTest]/[nested-class:EntityManagementTests]/[method:shouldReturnObservableLists()]
+display-name: Should return observable lists
+]]></system-out>
+</testcase>
+<testcase name="shouldProvideAccessToNetworkingClient()" classname="rougelike.ModelTest$ClientIntegrationTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:ClientIntegrationTests]/[method:shouldProvideAccessToNetworkingClient()]
+display-name: Should provide access to networking client
+]]></system-out>
+</testcase>
+<testcase name="shouldHandleSingleLevelDungeons()" classname="rougelike.game.dungeon.DungeonTest$LayoutStructureTests" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.game.dungeon.DungeonTest]/[nested-class:LayoutStructureTests]/[method:shouldHandleSingleLevelDungeons()]
+display-name: Should handle single level dungeons
+]]></system-out>
+</testcase>
+<testcase name="shouldHaveBackgroundProperty()" classname="rougelike.ModelTest$BackgroundManagementTests" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:rougelike.ModelTest]/[nested-class:BackgroundManagementTests]/[method:shouldHaveBackgroundProperty()]
+display-name: Should have background property
+]]></system-out>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>

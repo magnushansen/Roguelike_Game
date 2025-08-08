@@ -23,9 +23,14 @@ public class Dungeon implements Serializable {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder("Dungeon{name='").append(name).append("', layout=\n");
-        for (char[][] layer : layout) {
-            sb.append(Arrays.deepToString(layer)).append("\n");
+        StringBuilder sb = new StringBuilder("Dungeon{name='").append(name).append("', layout=");
+        if (layout == null) {
+            sb.append("null");
+        } else {
+            sb.append("\n");
+            for (char[][] layer : layout) {
+                sb.append(Arrays.deepToString(layer)).append("\n");
+            }
         }
         sb.append("}");
         return sb.toString();

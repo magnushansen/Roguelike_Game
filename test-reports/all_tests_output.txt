@@ -1,0 +1,393 @@
+
+Thanks for using JUnit! Support its development at https://junit.org/sponsoring
+
+Graphics Device initialization failed for :  sw
+Error initializing QuantumRenderer: no suitable pipeline found
+java.lang.RuntimeException: java.lang.RuntimeException: Error initializing QuantumRenderer: no suitable pipeline found
+	at com.sun.javafx.tk.quantum.QuantumRenderer.getInstance(QuantumRenderer.java:283)
+	at com.sun.javafx.tk.quantum.QuantumToolkit.init(QuantumToolkit.java:253)
+	at com.sun.javafx.tk.Toolkit.getToolkit(Toolkit.java:268)
+	at com.sun.javafx.application.PlatformImpl.isFxApplicationThread(PlatformImpl.java:428)
+	at javafx.application.Platform.isFxApplicationThread(Platform.java:194)
+	at utils.MockFactory.setupHeadless(MockFactory.java:41)
+	at utils.MockFactory.<clinit>(MockFactory.java:17)
+	at rougelike.ModelTest.setUp(ModelTest.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptLifecycleMethod(TimeoutExtension.java:128)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptBeforeEachMethod(TimeoutExtension.java:78)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeMethodInExtensionContext(ClassBasedTestDescriptor.java:521)
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$synthesizeBeforeEachMethodAdapter$23(ClassBasedTestDescriptor.java:506)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeEachMethods$3(TestMethodTestDescriptor.java:175)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeBeforeMethodsOrCallbacksUntilExceptionOccurs$6(TestMethodTestDescriptor.java:203)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeMethodsOrCallbacksUntilExceptionOccurs(TestMethodTestDescriptor.java:203)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeBeforeEachMethods(TestMethodTestDescriptor.java:172)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:135)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63)
+	at org.junit.platform.console.tasks.ConsoleTestExecutor.executeTests(ConsoleTestExecutor.java:102)
+	at org.junit.platform.console.tasks.ConsoleTestExecutor.lambda$execute$1(ConsoleTestExecutor.java:71)
+	at org.junit.platform.console.tasks.CustomContextClassLoaderExecutor.replaceThreadContextClassLoaderAndInvoke(CustomContextClassLoaderExecutor.java:42)
+	at org.junit.platform.console.tasks.CustomContextClassLoaderExecutor.invoke(CustomContextClassLoaderExecutor.java:33)
+	at org.junit.platform.console.tasks.ConsoleTestExecutor.execute(ConsoleTestExecutor.java:71)
+	at org.junit.platform.console.options.ExecuteTestsCommand.execute(ExecuteTestsCommand.java:61)
+	at org.junit.platform.console.options.ExecuteTestsCommand.execute(ExecuteTestsCommand.java:27)
+	at org.junit.platform.console.options.BaseCommand.call(BaseCommand.java:74)
+	at org.junit.platform.console.shadow.picocli.CommandLine.executeUserObject(CommandLine.java:2041)
+	at org.junit.platform.console.shadow.picocli.CommandLine.access$1500(CommandLine.java:148)
+	at org.junit.platform.console.shadow.picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)
+	at org.junit.platform.console.shadow.picocli.CommandLine$RunLast.handle(CommandLine.java:2453)
+	at org.junit.platform.console.shadow.picocli.CommandLine$RunLast.handle(CommandLine.java:2415)
+	at org.junit.platform.console.shadow.picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)
+	at org.junit.platform.console.shadow.picocli.CommandLine$RunLast.execute(CommandLine.java:2417)
+	at org.junit.platform.console.shadow.picocli.CommandLine.execute(CommandLine.java:2170)
+	at org.junit.platform.console.options.MainCommand.runCommand(MainCommand.java:137)
+	at org.junit.platform.console.options.MainCommand.runCommand(MainCommand.java:129)
+	at org.junit.platform.console.options.MainCommand.runCommand(MainCommand.java:93)
+	at org.junit.platform.console.options.MainCommand.call(MainCommand.java:77)
+	at org.junit.platform.console.shadow.picocli.CommandLine.executeUserObject(CommandLine.java:2041)
+	at org.junit.platform.console.shadow.picocli.CommandLine.access$1500(CommandLine.java:148)
+	at org.junit.platform.console.shadow.picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2461)
+	at org.junit.platform.console.shadow.picocli.CommandLine$RunLast.handle(CommandLine.java:2453)
+	at org.junit.platform.console.shadow.picocli.CommandLine$RunLast.handle(CommandLine.java:2415)
+	at org.junit.platform.console.shadow.picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2273)
+	at org.junit.platform.console.shadow.picocli.CommandLine$RunLast.execute(CommandLine.java:2417)
+	at org.junit.platform.console.shadow.picocli.CommandLine.execute(CommandLine.java:2170)
+	at org.junit.platform.console.options.MainCommand.runCommand(MainCommand.java:137)
+	at org.junit.platform.console.options.MainCommand.run(MainCommand.java:125)
+	at org.junit.platform.console.options.CommandFacade.run(CommandFacade.java:36)
+	at org.junit.platform.console.ConsoleLauncher.run(ConsoleLauncher.java:57)
+	at org.junit.platform.console.ConsoleLauncher.run(ConsoleLauncher.java:42)
+	at org.junit.platform.console.ConsoleLauncher.main(ConsoleLauncher.java:35)
+Caused by: java.lang.RuntimeException: Error initializing QuantumRenderer: no suitable pipeline found
+	at com.sun.javafx.tk.quantum.QuantumRenderer$PipelineRunnable.init(QuantumRenderer.java:95)
+	at com.sun.javafx.tk.quantum.QuantumRenderer$PipelineRunnable.run(QuantumRenderer.java:125)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+JavaFX Platform initialization failed: No toolkit found
+WARNING: A Java agent has been loaded dynamically (/Users/magnushansen/Movies/Roguelike/lib/byte-buddy-agent-1.14.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Java HotSpot(TM) 64-Bit Server VM warning: Sharing is only supported for boot loader classes because bootstrap classpath has been appended
+Invalid level index or dungeon data: 0
+Invalid level index or dungeon data: 0
+Invalid level index or dungeon data: 0
+Invalid level index or dungeon data: 0
+Invalid level index or dungeon data: -1
+Invalid level index or dungeon data: 999
+Invalid level index or dungeon data: 0
+Invalid level index or dungeon data: 0
+Invalid level index or dungeon data: 0
+Invalid level index or dungeon data: 0
+Invalid level index or dungeon data: 0
+Invalid level index or dungeon data: 1
+Invalid level index or dungeon data: 2
+Cannot download dungeon. Not connected to server.
+Error connecting to server: Connection refused
+Cannot send dungeon. Not connected to server.
+Projectile hit an enemy and dealt 25 damage.
+Enemy defeated!
+Enemy defeated!
+Aug 03, 2025 9:55:12 PM Serverapp.Server start
+INFO: Server is listening on port 8888
+Aug 03, 2025 9:55:14 PM Serverapp.Server start
+SEVERE: Server error: Address already in use
+Aug 03, 2025 9:55:14 PM Serverapp.Server shutdown
+INFO: Server shutdown complete
+Player healed by 150 points. Current health: 100
+Player defeated!
+Player healed by 25 points. Current health: 75
+[36m╷[0m
+[36m├─[0m [36mJUnit Jupiter[0m [32m✔[0m
+[36m│  ├─[0m [36mMain Model Tests[0m [32m✔[0m
+[36m│  │  ├─[0m [36mGuiState Integration Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle all GUI state transitions[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould start with main menu state[0m [32m✔[0m
+[36m│  │  ├─[0m [36mFile System Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle missing assets directory gracefully[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle file system errors gracefully[0m [32m✔[0m
+[36m│  │  ├─[0m [36mClient Integration Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould maintain same client instance[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould provide access to networking client[0m [32m✔[0m
+[36m│  │  ├─[0m [36mDungeon Management Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould allow dungeon list modifications[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould maintain available dungeons list[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle empty dungeon list[0m [32m✔[0m
+[36m│  │  ├─[0m [36mBackground Management Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould have background property[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould load available backgrounds[0m [32m✔[0m
+[36m│  │  ├─[0m [36mProperty Management Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle null dungeon selection[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould get and set selected dungeon[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould get and set active menu[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle null menu state[0m [32m✔[0m
+[36m│  │  └─[0m [36mInitialization Tests[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould initialize available dungeons list[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould have non-null client[0m [32m✔[0m
+[36m│  │     └─[0m [34mShould initialize with default values[0m [32m✔[0m
+[36m│  ├─[0m [36mLoader Integration Tests[0m [32m✔[0m
+[36m│  │  ├─[0m [36mIntegration with GameModel Tests[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould update game model with loaded entities[0m [32m✔[0m
+[36m│  │  ├─[0m [36mTile Calculation Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle single cell dungeons[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould calculate tile height based on rows[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle irregular dungeon shapes[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould calculate tile width based on columns[0m [32m✔[0m
+[36m│  │  ├─[0m [36mError Handling Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle null dungeon selection[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle invalid level indices gracefully[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle empty dungeon name[0m [32m✔[0m
+[36m│  │  ├─[0m [36mEntity Creation Tests[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould create floor entities for empty spaces[0m [32m✔[0m
+[36m│  │  ├─[0m [36mDungeon Loading Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould clear previous dungeon data[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould set tile dimensions correctly[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould load basic dungeon successfully[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle different level indices[0m [32m✔[0m
+[36m│  │  └─[0m [36mInitialization Tests[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle null game model gracefully[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle null model gracefully[0m [32m✔[0m
+[36m│  │     └─[0m [34mShould initialize loader with valid dependencies[0m [32m✔[0m
+[36m│  ├─[0m [36mClient Tests[0m [32m✔[0m
+[36m│  │  ├─[0m [34mShould handle requesting dungeon when disconnected[0m [32m✔[0m
+[36m│  │  ├─[0m [34mShould handle connection to non-existent server[0m [32m✔[0m
+[36m│  │  ├─[0m [34mShould handle sending dungeon when disconnected[0m [32m✔[0m
+[36m│  │  ├─[0m [34mShould handle disconnection gracefully[0m [32m✔[0m
+[36m│  │  └─[0m [36mInitialization Tests[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould create client instance successfully[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould initialize as disconnected[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle null community menu model[0m [32m✔[0m
+[36m│  │     └─[0m [34mShould accept community menu model[0m [32m✔[0m
+[36m│  ├─[0m [36mDungeon Tests[0m [32m✔[0m
+[36m│  │  ├─[0m [36mEdge Cases Tests[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle special characters in name[0m [32m✔[0m
+[36m│  │  ├─[0m [36mToString Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle null name in toString[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould include dungeon name in string representation[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould generate non-null string representation[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle null layout in toString[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould include layout information in string representation[0m [32m✔[0m
+[36m│  │  ├─[0m [36mLayout Structure Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle moderately sized dungeons[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle single level dungeons[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle multi-level dungeons[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle irregular layouts[0m [32m✔[0m
+[36m│  │  ├─[0m [36mGetter Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould return reference to original layout[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould return correct name[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould allow layout modification through reference[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould return correct layout[0m [32m✔[0m
+[36m│  │  └─[0m [36mConstructor Tests[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle empty name[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould create dungeon with valid parameters[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle null layout[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle empty layout[0m [32m✔[0m
+[36m│  │     └─[0m [34mShould handle null name[0m [32m✔[0m
+[36m│  ├─[0m [36mProjectile Entity Tests[0m [32m✔[0m
+[36m│  │  ├─[0m [36mRendering Tests[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould not throw exception when rendering[0m [32m✔[0m
+[36m│  │  ├─[0m [36mEdge Case Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle zero direction[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle zero speed[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle negative time elapsed[0m [32m✔[0m
+[36m│  │  ├─[0m [36mPhysics Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould maintain constant velocity[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle large time intervals[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle very small time intervals[0m [32m✔[0m
+[36m│  │  ├─[0m [36mInteraction Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould return empty interaction for non-enemy entities[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle null entity interaction[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould interact with enemy correctly[0m [32m✔[0m
+[36m│  │  ├─[0m [36mMovement Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle zero time elapsed[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould move in correct direction[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle diagonal movement[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle negative direction[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould move correct distance based on time[0m [32m✔[0m
+[36m│  │  └─[0m [36mInitialization Tests[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould initialize projectile with correct values[0m [32m✔[0m
+[36m│  │     └─[0m [34mShould not occupy space[0m [32m✔[0m
+[36m│  ├─[0m [36mGame Model Tests[0m [32m✔[0m
+[36m│  │  ├─[0m [36mMemory Management Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould allow entity collection clearing[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle large number of entities[0m [32m✔[0m
+[36m│  │  ├─[0m [36mThread Safety Tests[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle concurrent entity additions[0m [32m✔[0m
+[36m│  │  ├─[0m [36mCollection Behavior Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould allow duplicate entities[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould support collection modifications[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould maintain entity order in collections[0m [32m✔[0m
+[36m│  │  ├─[0m [36mTile Dimension Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle zero tile dimensions[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould maintain static tile dimensions across instances[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould set and get tile height correctly[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould set and get tile width correctly[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle different tile dimensions[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle negative tile dimensions[0m [32m✔[0m
+[36m│  │  ├─[0m [36mPlayer Management Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle player replacement[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle null player assignment[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould set and get player correctly[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould initialize with null player[0m [32m✔[0m
+[36m│  │  └─[0m [36mEntity Management Tests[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould add entity to entities collection[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle multiple entities[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould add entity to floor entities collection[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould return observable lists[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle null entities gracefully[0m [32m✔[0m
+[36m│  │     └─[0m [34mShould initialize with empty entity collections[0m [32m✔[0m
+[36m│  ├─[0m [36mCollision Detection Tests[0m [32m✔[0m
+[36m│  │  ├─[0m [34mShould handle basic edge cases[0m [32m✔[0m
+[36m│  │  ├─[0m [36mCollision Resolution Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould choose minimum overlap direction[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould resolve vertical collision correctly[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould resolve collision by moving entity[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould resolve horizontal collision correctly[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle identical positions[0m [32m✔[0m
+[36m│  │  └─[0m [36mAABB Collision Detection Tests[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould be symmetric[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle zero-sized entities[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould not detect collision when entities don't overlap[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould detect collision when one entity is inside another[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould detect collision when entities touch at edge[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould detect collision when entities overlap[0m [32m✔[0m
+[36m│  │     └─[0m [34mShould handle entities with different sizes[0m [32m✔[0m
+[36m│  ├─[0m [36mEnemy Entity Tests[0m [32m✔[0m
+[36m│  │  ├─[0m [36mEdge Case Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle zero time elapsed in movement[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle negative damage[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle player at same position[0m [32m✔[0m
+[36m│  │  ├─[0m [36mAnimation Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould update animation correctly[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle multiple animation updates[0m [32m✔[0m
+[36m│  │  ├─[0m [36mInteraction Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould interact with player correctly[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould return empty interaction for non-player entities[0m [32m✔[0m
+[36m│  │  ├─[0m [36mMovement and AI Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould calculate distance to player correctly[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould undo move correctly[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould move towards player when in detection range[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould handle random movement when player out of range[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould not move towards player when out of detection range[0m [32m✔[0m
+[36m│  │  ├─[0m [36mHealth and Combat Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould have damage immunity period[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould die when taking lethal damage[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould take damage correctly[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould die when health reaches zero[0m [32m✔[0m
+[36m│  │  └─[0m [36mInitialization Tests[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould occupy space by default[0m [32m✔[0m
+[36m│  │     └─[0m [34mShould initialize enemy with correct values[0m [32m✔[0m
+[36m│  ├─[0m [36mServer Tests[0m [32m✔[0m
+[36m│  │  ├─[0m [34mShould handle server startup gracefully[0m [32m✔[0m
+[36m│  │  ├─[0m [34mShould create server instance successfully[0m [32m✔[0m
+[36m│  │  └─[0m [36mServer Lifecycle Tests[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle server startup gracefully[0m [32m✔[0m
+[36m│  │     └─[0m [34mShould handle port already in use gracefully[0m [32m✔[0m
+[36m│  └─[0m [36mPlayer Entity Tests[0m [32m✔[0m
+[36m│     ├─[0m [36mAnimation Tests[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould update animation when moving[0m [32m✔[0m
+[36m│     │  └─[0m [34mShould update animation when idle[0m [32m✔[0m
+[36m│     ├─[0m [36mCombat Tests[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould create projectile when attacking[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould attack in facing direction when stationary[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould create projectile with correct damage[0m [32m✔[0m
+[36m│     │  └─[0m [34mShould attack in movement direction when moving[0m [32m✔[0m
+[36m│     ├─[0m [36mMovement Tests[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould move down correctly[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould move right correctly[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould handle diagonal movement[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould stop moving when stop methods called[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould move up correctly[0m [32m✔[0m
+[36m│     │  └─[0m [34mShould move left correctly[0m [32m✔[0m
+[36m│     ├─[0m [36mHealth Management Tests[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould have damage immunity period[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould not heal above max health[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould take damage correctly[0m [32m✔[0m
+[36m│     │  ├─[0m [34mShould die when health reaches zero[0m [32m✔[0m
+[36m│     │  └─[0m [34mShould heal player correctly[0m [32m✔[0m
+[36m│     └─[0m [36mInitialization Tests[0m [32m✔[0m
+[36m│        └─[0m [34mShould initialize player with correct values[0m [32m✔[0m
+[36m├─[0m [36mJUnit Vintage[0m [32m✔[0m
+[36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
+
+Test run finished after 2130 ms
+[        58 containers found      ]
+[         0 containers skipped    ]
+[        58 containers started    ]
+[         0 containers aborted    ]
+[        58 containers successful ]
+[         0 containers failed     ]
+[       153 tests found           ]
+[         0 tests skipped         ]
+[       153 tests started         ]
+[         0 tests aborted         ]
+[       153 tests successful      ]
+[         0 tests failed          ]
+
+
+WARNING: Delegated to the 'execute' command.
+         This behaviour has been deprecated and will be removed in a future release.
+         Please use the 'execute' command directly.

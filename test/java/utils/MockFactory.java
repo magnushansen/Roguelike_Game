@@ -9,8 +9,43 @@ import rougelike.networking.Client;
 import rougelike.menu.communitymenu.CommunityMenuModel;
 
 import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.BeforeAll;
 
 public class MockFactory {
+    
+    static {
+        setupHeadless();
+    }
+    
+    @BeforeAll
+    static void setupHeadless() {
+        // Set headless system properties BEFORE any JavaFX initialization
+        System.setProperty("java.awt.headless", "true");
+        System.setProperty("testfx.robot", "glass");
+        System.setProperty("testfx.headless", "true");
+        System.setProperty("prism.order", "sw");
+        System.setProperty("prism.text", "t2k");
+        System.setProperty("glass.platform", "Monocle");
+        System.setProperty("monocle.platform", "Headless");
+        System.setProperty("prism.verbose", "false");
+        System.setProperty("javafx.macosx.embedded", "true");
+        System.setProperty("prism.allowhidpi", "false");
+        System.setProperty("quantum.multithreaded", "false");
+        
+        // Set test mode flag
+        System.setProperty("test.mode", "true");
+        
+        // Initialize JavaFX platform in headless mode
+        try {
+            // Try to start JavaFX Platform if not already running
+            if (!javafx.application.Platform.isFxApplicationThread()) {
+                javafx.application.Platform.startup(() -> {});
+            }
+        } catch (Exception e) {
+            // Platform might already be initialized or not available, that's OK
+            System.err.println("JavaFX Platform initialization failed: " + e.getMessage());
+        }
+    }
     
     public static Image createMockImage(double width, double height) {
         Image mockImage = mock(Image.class);
@@ -183,9 +218,24 @@ public class MockFactory {
     public static Model createMockModel() {
         Model mockModel = mock(Model.class);
         
-        when(mockModel.getSelectedDungeon()).thenReturn("Test Dungeon");
-        when(mockModel.getActiveMenu()).thenReturn(rougelike.GuiState.MAINMENU);
-        when(mockModel.getClient()).thenReturn(createMockClient());
+        // Create mock client first to avoid nested mocking issues
+        Client mockClient = createMockClient();
+        
+        when(mockModel.getSelectedDungeon()).thenReturn("Dungeon 1");
+        when(mockModel.activeMenuProperty()).thenReturn(new javafx.beans.property.SimpleObjectProperty<>(rougelike.GuiState.MAINMENU));
+        when(mockModel.getClient()).thenReturn(mockClient);
+        
+        // Create simple mock background property that doesn't cause JavaFX issues
+        @SuppressWarnings("unchecked")
+        javafx.beans.property.ObjectProperty<javafx.scene.layout.Background> mockBackgroundProperty = 
+            mock(javafx.beans.property.ObjectProperty.class);
+        when(mockModel.backgroundProperty()).thenReturn(mockBackgroundProperty);
+        
+        // Create mock available backgrounds
+        javafx.collections.ObservableList<javafx.scene.image.Image> mockBackgrounds = 
+            javafx.collections.FXCollections.observableArrayList();
+        mockBackgrounds.add(createMockImage());
+        when(mockModel.getAvailableBackgrounds()).thenReturn(mockBackgrounds);
         
         javafx.collections.ObservableList<String> mockDungeons = 
             javafx.collections.FXCollections.observableArrayList();
@@ -209,7 +259,7 @@ public class MockFactory {
         javafx.collections.ObservableList<String> mockCommunityDungeons = 
             javafx.collections.FXCollections.observableArrayList();
         mockCommunityDungeons.addAll("Community Dungeon 1", "Community Dungeon 2");
-        when(mockModel.getCommunityDungeons()).thenReturn(mockCommunityDungeons);
+        when(mockModel.getDungeons()).thenReturn(mockCommunityDungeons);
         
         return mockModel;
     }

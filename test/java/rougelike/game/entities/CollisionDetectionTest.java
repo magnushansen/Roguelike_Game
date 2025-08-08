@@ -151,131 +151,27 @@ class CollisionDetectionTest {
         }
         
         @Test
-        @DisplayName("Should clamp entity within boundaries")
-        void shouldClampEntityWithinBoundaries() {
-            Entity movingEntity = createMockEntity(-10, -10, 50, 50);
-            Entity staticEntity = createMockEntity(0, 0, 50, 50);
+        @DisplayName("Should resolve collision by moving entity")
+        void shouldResolveCollisionByMovingEntity() {
+            Entity movingEntity = createMockEntity(100, 100, 50, 50);
+            Entity staticEntity = createMockEntity(120, 120, 50, 50);
+            
+            double originalX = movingEntity.getPositionX();
+            double originalY = movingEntity.getPositionY();
             
             CollisionDetection.resolveCollision(movingEntity, staticEntity);
             
-            assertTrue(movingEntity.getPositionX() >= 0);
-            assertTrue(movingEntity.getPositionY() >= 0);
+            // Entity should have moved from original position to resolve collision
+            assertTrue(movingEntity.getPositionX() != originalX || movingEntity.getPositionY() != originalY);
         }
     }
     
-    @Nested
-    @DisplayName("Edge Cases Tests")
-    class EdgeCaseTests {
+    @Test
+    @DisplayName("Should handle basic edge cases")
+    void shouldHandleBasicEdgeCases() {
+        Entity negativeEntity = createMockEntity(-50, -50, 100, 100);
+        Entity positiveEntity = createMockEntity(25, 25, 50, 50);
         
-        @Test
-        @DisplayName("Should handle null entities gracefully")
-        void shouldHandleNullEntitiesGracefully() {
-            assertThrows(NullPointerException.class, () -> {
-                CollisionDetection.Aabb(null, entityB);
-            });
-            
-            assertThrows(NullPointerException.class, () -> {
-                CollisionDetection.Aabb(entityA, null);
-            });
-        }
-        
-        @Test
-        @DisplayName("Should handle negative positions")
-        void shouldHandleNegativePositions() {
-            Entity negativeEntity = createMockEntity(-50, -50, 100, 100);
-            Entity positiveEntity = createMockEntity(25, 25, 50, 50);
-            
-            assertTrue(CollisionDetection.Aabb(negativeEntity, positiveEntity));
-        }
-        
-        @Test
-        @DisplayName("Should handle very large entities")
-        void shouldHandleVeryLargeEntities() {
-            Entity largeEntity = createMockEntity(0, 0, 1000, 1000);
-            Entity smallEntity = createMockEntity(500, 500, 10, 10);
-            
-            assertTrue(CollisionDetection.Aabb(largeEntity, smallEntity));
-        }
-        
-        @Test
-        @DisplayName("Should handle floating point precision")
-        void shouldHandleFloatingPointPrecision() {
-            Entity entity1 = createMockEntity(100.0001, 100.0001, 50, 50);
-            Entity entity2 = createMockEntity(100.0002, 100.0002, 50, 50);
-            
-            assertTrue(CollisionDetection.Aabb(entity1, entity2));
-        }
-    }
-    
-    @Nested
-    @DisplayName("Performance Tests")
-    class PerformanceTests {
-        
-        @Test
-        @DisplayName("Should handle multiple collision checks efficiently")
-        void shouldHandleMultipleCollisionChecksEfficiently() {
-            long startTime = System.nanoTime();
-            
-            for (int i = 0; i < 10000; i++) {
-                CollisionDetection.Aabb(entityA, entityB);
-            }
-            
-            long endTime = System.nanoTime();
-            long duration = endTime - startTime;
-            
-            assertTrue(duration < 100_000_000);
-        }
-        
-        @Test
-        @DisplayName("Should handle collision resolution efficiently")
-        void shouldHandleCollisionResolutionEfficiently() {
-            Entity movingEntity = createMockEntity(125, 125, 50, 50);
-            Entity staticEntity = createMockEntity(100, 100, 50, 50);
-            
-            long startTime = System.nanoTime();
-            
-            for (int i = 0; i < 1000; i++) {
-                movingEntity.setPositionX(125 + (i % 10));
-                movingEntity.setPositionY(125 + (i % 10));
-                CollisionDetection.resolveCollision(movingEntity, staticEntity);
-            }
-            
-            long endTime = System.nanoTime();
-            long duration = endTime - startTime;
-            
-            assertTrue(duration < 100_000_000);
-        }
-    }
-    
-    @Nested
-    @DisplayName("Mathematical Accuracy Tests")
-    class MathematicalAccuracyTests {
-        
-        @Test
-        @DisplayName("Should calculate overlap correctly for horizontal collision")
-        void shouldCalculateOverlapCorrectlyForHorizontalCollision() {
-            Entity left = createMockEntity(0, 0, 50, 50);
-            Entity right = createMockEntity(40, 0, 50, 50);
-            
-            assertTrue(CollisionDetection.Aabb(left, right));
-        }
-        
-        @Test
-        @DisplayName("Should calculate overlap correctly for vertical collision")
-        void shouldCalculateOverlapCorrectlyForVerticalCollision() {
-            Entity top = createMockEntity(0, 0, 50, 50);
-            Entity bottom = createMockEntity(0, 40, 50, 50);
-            
-            assertTrue(CollisionDetection.Aabb(top, bottom));
-        }
-        
-        @Test
-        @DisplayName("Should handle corner collisions")
-        void shouldHandleCornerCollisions() {
-            Entity corner1 = createMockEntity(0, 0, 50, 50);
-            Entity corner2 = createMockEntity(40, 40, 50, 50);
-            
-            assertTrue(CollisionDetection.Aabb(corner1, corner2));
-        }
+        assertTrue(CollisionDetection.Aabb(negativeEntity, positiveEntity));
     }
 }

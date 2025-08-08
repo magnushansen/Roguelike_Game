@@ -114,6 +114,11 @@ public class Client {
     }
 
     public void downloadDungeon(String dungeonName) {
+        if (!connected) {
+            System.err.println("Cannot download dungeon. Not connected to server.");
+            return;
+        }
+
         try {
             out.writeObject("DOWNLOAD_DUNGEON");
             out.writeObject(dungeonName);

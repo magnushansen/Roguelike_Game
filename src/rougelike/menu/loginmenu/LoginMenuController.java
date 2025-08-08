@@ -24,20 +24,18 @@ public class LoginMenuController {
     public void loginFunction(String address, int port) {
         roguelikeModel.getClient().connectClient(address, port);
 
-        if (roguelikeModel.getClient().getLoginStatus() == false) {
+        if (!roguelikeModel.getClient().getLoginStatus()) {
             view.showFailedLogin();
         }
-        if (roguelikeModel.getClient().getLoginStatus() == true) {
-            loginSucessfull(() -> {
+        if (roguelikeModel.getClient().getLoginStatus()) {
+            loginSuccessful(() -> {
                 roguelikeModel.activeMenuProperty().set(GuiState.COMMUNITYMENU);
             });
         }
 
-        // loginSucessfull(null);
-
     }
 
-    public void loginSucessfull(Runnable action) {
+    public void loginSuccessful(Runnable action) {
 
         action.run();
 

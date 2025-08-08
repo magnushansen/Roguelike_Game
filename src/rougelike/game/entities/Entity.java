@@ -32,7 +32,7 @@ public abstract class Entity {
         return positionY;
     }
 
-    protected void setPositionY(double positionY) {
+    public void setPositionY(double positionY) {
         this.positionY = positionY;
     }
 

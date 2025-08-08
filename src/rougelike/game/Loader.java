@@ -41,6 +41,11 @@ public class Loader {
 
         char[][][] dungeon = DungeonDatabase.getDungeonLayoutByName(model.getSelectedDungeon());
 
+        if (dungeon == null || level < 0 || level >= dungeon.length || dungeon[level] == null || dungeon[level].length == 0) {
+            System.err.println("Invalid level index or dungeon data: " + level);
+            return;
+        }
+
         calculateTileWidth(dungeon[level][0].length);
         calculateTileHeight(dungeon[level].length);
 

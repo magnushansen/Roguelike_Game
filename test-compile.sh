@@ -63,6 +63,19 @@ for jar in "$LIB_DIR"/*.jar; do
     fi
 done
 
+# Add JavaFX libraries from settings.json location
+JAVAFX_DIR="/Users/magnushansen/Downloads/javafx-sdk-17.0.16/lib"
+if [ -d "$JAVAFX_DIR" ]; then
+    for jar in "$JAVAFX_DIR"/*.jar; do
+        if [ -f "$jar" ]; then
+            CLASSPATH="$CLASSPATH:$jar"
+        fi
+    done
+    echo -e "${GREEN}✅ Added JavaFX libraries to classpath${NC}"
+else
+    echo -e "${YELLOW}⚠️  JavaFX directory not found at $JAVAFX_DIR${NC}"
+fi
+
 echo -e "${BLUE}🔨 Compiling main source files...${NC}"
 # Compile main source files first (if not already compiled)
 if [ -d "$SRC_DIR" ]; then

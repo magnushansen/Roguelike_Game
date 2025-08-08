@@ -17,7 +17,7 @@ public class Enemy extends GameElement {
     private double speed; 
     private double detectionRadius;
     private static final Duration attackSpeed = Duration.ofMillis(500);
-    private static Instant lastEventTime = null;
+    private Instant lastEventTime = null;
 
     private ImageSprite sprite;
 
@@ -35,10 +35,12 @@ public class Enemy extends GameElement {
     public void takeDamage(int amount) {
         Instant now = Instant.now();
         if (lastEventTime == null || Duration.between(lastEventTime, now).compareTo(attackSpeed) >= 0) {
-            health -= amount;
+            if (amount > 0) {
+                health -= amount;
+            }
             lastEventTime = now;
             if (isDead()) {
-                System.out.println("Player defeated!");
+                System.out.println("Enemy defeated!");
             }
         }
     }
