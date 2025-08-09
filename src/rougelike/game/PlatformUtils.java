@@ -28,7 +28,6 @@ public class PlatformUtils {
     
     /**
      * Executes a runnable on the JavaFX Application Thread and waits for completion.
-     * Useful when you need to ensure the operation completes before continuing.
      */
     public static void runAndWait(Runnable runnable) throws InterruptedException {
         if (isTestMode()) {

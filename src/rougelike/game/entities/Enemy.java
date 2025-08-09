@@ -18,7 +18,6 @@ public class Enemy extends GameElement {
     private double detectionRadius;
     private static final Duration attackSpeed = Duration.ofMillis(500);
     private Instant lastEventTime = null;
-
     private ImageSprite sprite;
 
     public Enemy(double positionX, double positionY, double width, double height, Image[] animationFrames, int health, int damage,

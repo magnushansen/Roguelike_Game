@@ -2,6 +2,7 @@ package rougelike.game.entities;
 
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import rougelike.Global;
 import rougelike.game.graphics.ImageSprite;
 
 public class Projectile extends GameElement {
@@ -9,6 +10,7 @@ public class Projectile extends GameElement {
     private double velocityY;
     private int damage;
     private ImageSprite sprite;
+    private boolean shouldRemove = false;
 
     public Projectile(double positionX, double positionY, double width, double height, Image image, double speed,
             double directionX, double directionY, int damage) {
@@ -35,6 +37,7 @@ public class Projectile extends GameElement {
                     InteractionResultType.TAKE_DAMAGE
             };
             System.out.println("Projectile hit an enemy and dealt " + damage + " damage.");
+            this.shouldRemove = true;
         }
         return new InteractionResult(interactionResultType, entity);
     }
@@ -42,6 +45,16 @@ public class Projectile extends GameElement {
     public void updatePosition(long timeElapsedMilli) {
         setPositionX(getPositionX() + velocityX * timeElapsedMilli);
         setPositionY(getPositionY() + velocityY * timeElapsedMilli);
+        
+        // Mark for removal if out of bounds
+        if (getPositionX() < 0 || getPositionY() < 0 || 
+            getPositionX() > Global.WINDOW_WIDTH || getPositionY() > Global.WINDOW_HEIGHT) {
+            this.shouldRemove = true;
+        }
+    }
+    
+    public boolean shouldRemove() {
+        return shouldRemove;
     }
 
     @Override

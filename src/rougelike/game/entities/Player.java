@@ -15,7 +15,6 @@ public class Player extends Entity {
     private ImageSprite movingSprite;
     private ImageSprite idleSprite;
     private ImageSprite currentSprite;
-
     private double movementSpeed = 0.3;
     private double velocityX;
     private double velocityY;

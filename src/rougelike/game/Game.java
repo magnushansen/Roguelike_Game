@@ -480,7 +480,8 @@ public class Game {
             while (iterator.hasNext()) {
                 Entity entity = iterator.next();
                 if ((entity instanceof Enemy && ((Enemy) entity).isDead()) ||
-                        (entity instanceof Player && ((Player) entity).isDead())) {
+                        (entity instanceof Player && ((Player) entity).isDead()) ||
+                        (entity instanceof Projectile && ((Projectile) entity).shouldRemove())) {
                     iterator.remove();
                 }
             }

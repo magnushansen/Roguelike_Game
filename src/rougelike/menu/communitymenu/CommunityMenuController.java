@@ -44,10 +44,8 @@ public class CommunityMenuController {
             return;
         }
     
-
-    
         System.out.println("Uploading dungeon: " + dungeonName);
-        roguelikeModel.getClient().sendDungeon(dungeonName); // Send dungeon to server
+        roguelikeModel.getClient().sendDungeon(dungeonName); 
     }
     
 

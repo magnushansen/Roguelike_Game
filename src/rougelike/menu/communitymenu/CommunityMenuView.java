@@ -15,7 +15,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 
-// the GUI builder
 public class CommunityMenuView {
     private final CommunityMenuModel model;
     private final Runnable showMainMenu;

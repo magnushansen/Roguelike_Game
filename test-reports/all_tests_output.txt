@@ -151,11 +151,11 @@ Cannot send dungeon. Not connected to server.
 Projectile hit an enemy and dealt 25 damage.
 Enemy defeated!
 Enemy defeated!
-Aug 09, 2025 3:45:41 PM Serverapp.Server start
+Aug 09, 2025 4:22:01 PM Serverapp.Server start
 INFO: Server is listening on port 8888
-Aug 09, 2025 3:45:42 PM Serverapp.Server start
+Aug 09, 2025 4:22:02 PM Serverapp.Server start
 SEVERE: Server error: Address already in use
-Aug 09, 2025 3:45:42 PM Serverapp.Server shutdown
+Aug 09, 2025 4:22:02 PM Serverapp.Server shutdown
 INFO: Server shutdown complete
 Player healed by 150 points. Current health: 100
 Player defeated!
@@ -399,7 +399,7 @@ Player healed by 25 points. Current health: 75
 [36m├─[0m [36mJUnit Vintage[0m [32m✔[0m
 [36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
 
-Test run finished after 2128 ms
+Test run finished after 2116 ms
 [        64 containers found      ]
 [         0 containers skipped    ]
 [        64 containers started    ]

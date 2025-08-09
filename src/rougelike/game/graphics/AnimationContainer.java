@@ -2,7 +2,6 @@ package rougelike.game.graphics;
 
 import javafx.scene.canvas.GraphicsContext;
 import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class AnimationContainer<T extends Animatable> {
@@ -41,15 +40,13 @@ public class AnimationContainer<T extends Animatable> {
             throw new IllegalArgumentException("Delta time cannot be negative");
         }
         
-        Iterator<T> iterator = animations.iterator();
-        while (iterator.hasNext()) {
-            T animation = iterator.next();
+        for (T animation : animations) {
             animation.update(deltaTime);
             if (animation.isActive()) {
                 animation.renderAnimation(gc);
-            } else {
-                iterator.remove();
             }
         }
+        
+        animations.removeIf(animation -> !animation.isActive());
     }
 }

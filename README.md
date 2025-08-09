@@ -42,7 +42,7 @@ A 2D roguelike dungeon crawler single-player game built with JavaFX with communi
 ### 1. Clone or Download the Project
 ```bash
 git clone <repository-url>
-cd roguelike_new_project
+cd Roguelike
 ```
 
 ### 2. Compile the Project
@@ -90,15 +90,32 @@ src/
 │   ├── Model.java              # Central data model
 │   ├── View.java               # View orchestrator
 │   ├── Global.java             # Global constants (512x512 resolution)
+│   ├── GuiState.java           # GUI state management
 │   ├── game/                   # Core game engine
 │   │   ├── Game.java           # Main game loop with JavaFX AnimationTimer
 │   │   ├── GameModel.java      # Game state management
+│   │   ├── GameConstants.java  # Game-specific constants
 │   │   ├── Loader.java         # Dungeon loading system
+│   │   ├── PlatformUtils.java  # Platform-specific utilities
 │   │   ├── entities/           # Game entities and collision system
+│   │   │   ├── Entity.java, GameElement.java, Player.java, Enemy.java, Projectile.java
+│   │   │   ├── CollisionDetection.java, CollisionTask.java
+│   │   │   ├── Wall.java, Floor.java, Exit.java, Ladder.java, Well.java
+│   │   │   ├── ImageDatabase.java, InteractionResult.java, InteractionResultType.java
 │   │   ├── graphics/           # Animation and sprite management
+│   │   │   ├── AnimationContainer.java, Animatable.java, ExplosionAnimation.java
+│   │   │   ├── ImageSprite.java, ImageUtils.java
 │   │   └── dungeon/            # Dungeon data structures
+│   │       ├── Dungeon.java, DungeonDatabase.java
 │   ├── menu/                   # Menu system (MVC pattern)
+│   │   ├── mainmenu/           # Main menu components
+│   │   ├── loginmenu/          # Login menu with model/view/controller
+│   │   ├── communitymenu/      # Community features with model/view/controller
+│   │   ├── settingsmenu/       # Settings with view/controller
+│   │   ├── victorymenu/        # Victory screen controller
+│   │   └── LossMenu/           # Loss screen controller
 │   └── networking/             # Client-side networking
+│       ├── Client.java, MessageReceiver.java
 └── Serverapp/                  # Server application
     ├── ServerApp.java          # Server entry point
     ├── Server.java             # Multi-threaded server (port 8888)
@@ -143,15 +160,32 @@ The project includes a comprehensive test suite with JUnit 5 and Mockito:
 test/
 ├── java/
 │   ├── rougelike/
+│   │   ├── ModelTest.java          # Main model tests
 │   │   ├── game/
-│   │   │   ├── entities/          # Entity unit tests
-│   │   │   ├── dungeon/           # Dungeon loading tests
-│   │   │   └── GameModelTest.java # Game state tests
-│   │   ├── networking/            # Client networking tests
-│   │   └── ModelTest.java         # Main model tests
-│   ├── Serverapp/                 # Server tests
-│   └── utils/                     # Test utilities and mocks
-└── resources/                     # Test resources
+│   │   │   ├── GameModelTest.java      # Game state management tests
+│   │   │   ├── LoaderIntegrationTest.java # Dungeon loading integration tests
+│   │   │   ├── entities/               # Entity unit tests
+│   │   │   │   ├── CollisionDetectionTest.java
+│   │   │   │   ├── EnemyTest.java
+│   │   │   │   ├── PlayerTest.java
+│   │   │   │   ├── ProjectileTest.java
+│   │   │   │   └── PureLogicPlayerTest.java
+│   │   │   └── dungeon/
+│   │   │       └── DungeonTest.java    # Dungeon data structure tests
+│   │   └── networking/
+│   │       └── ClientTest.java         # Client networking tests
+│   ├── Serverapp/
+│   │   └── ServerTest.java            # Server functionality tests
+│   └── utils/                         # Test utilities and mocks
+│       ├── JavaFXTestExtension.java   # JavaFX test setup
+│       ├── MockFactory.java           # Mock object factory
+│       ├── TestEnemy.java             # Enemy test doubles
+│       ├── TestEntity.java            # Entity test doubles
+│       ├── TestImageDatabase.java     # Image asset mocking
+│       ├── TestPlayer.java            # Player test doubles
+│       ├── TestProjectile.java        # Projectile test doubles
+│       ├── TestResourceManager.java   # Resource management mocking
+│       └── TestUtils.java             # General test utilities
 ```
 
 **Running Tests:**
@@ -166,16 +200,21 @@ test/
 ./test-run.sh entities    # Entity tests only
 ./test-run.sh network     # Network tests only
 ./test-run.sh server      # Server tests only
+./test-run.sh game        # Game logic tests only
+./test-run.sh model       # Model tests only
 ./test-run.sh all         # All tests (default)
+
+# Run specific test class
+./test-run.sh PlayerTest
 ```
 
 **Test Coverage:**
-- ✅ **Unit Tests**: Core game entities (Player, Enemy, Projectile)
-- ✅ **Integration Tests**: Dungeon loading and game flow  
-- ✅ **System Tests**: Collision detection and physics
-- ✅ **Network Tests**: Client-server communication
-- ✅ **Model Tests**: Application state management
-- ✅ **Utility Tests**: Helper classes and mock objects
+- ✅ **Entity Tests**: Player movement, combat, Enemy AI, Projectile physics, Collision detection
+- ✅ **Game Logic Tests**: Game state management, Dungeon loading and integration
+- ✅ **Model Tests**: Application state management and MVC coordination
+- ✅ **Network Tests**: Client-server communication and dungeon sharing
+- ✅ **Server Tests**: Multi-threaded server functionality and client handling
+- ✅ **Utility Tests**: Mock objects, JavaFX test extensions, and test helpers
 
 **Test Dependencies:**
 - JUnit 5 (Jupiter) - Testing framework
