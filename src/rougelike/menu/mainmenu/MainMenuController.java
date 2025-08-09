@@ -6,13 +6,10 @@ import rougelike.GuiState;
 import rougelike.Model;
 
 public class MainMenuController {
-    MainMenuModel model;
     MainMenuView view;
 
     public MainMenuController(Model rougelikeModel, Runnable startGame) {
-        this.model = new MainMenuModel();
         this.view = new MainMenuView(
-                model,
                 () -> {
                     rougelikeModel.activeMenuProperty().set(GuiState.GAME);
                     startGame.run();

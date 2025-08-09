@@ -118,8 +118,12 @@ display_summary() {
     if [ -f "$REPORTS_DIR/all_tests_output.txt" ]; then
         # Extract test results from output
         TESTS_RUN=$(grep -o "Test run finished after" "$REPORTS_DIR/all_tests_output.txt" | wc -l)
-        TESTS_PASSED=$(grep -o "successful" "$REPORTS_DIR/all_tests_output.txt" | wc -l)
-        TESTS_FAILED=$(grep -o "failed" "$REPORTS_DIR/all_tests_output.txt" | wc -l)
+        TESTS_PASSED=$(grep -o "\[.*tests successful.*\]" "$REPORTS_DIR/all_tests_output.txt" | sed 's/\[[ ]*\([0-9]*\).*/\1/')
+        TESTS_FAILED=$(grep -o "\[.*tests failed.*\]" "$REPORTS_DIR/all_tests_output.txt" | sed 's/\[[ ]*\([0-9]*\).*/\1/')
+        
+        # Set default values if empty
+        TESTS_PASSED=${TESTS_PASSED:-0}
+        TESTS_FAILED=${TESTS_FAILED:-0}
         
         echo -e "${GREEN}✅ Tests passed: $TESTS_PASSED${NC}"
         if [ "$TESTS_FAILED" -gt 0 ]; then
@@ -136,10 +140,90 @@ display_summary() {
     echo -e "\n${BLUE}📁 Reports saved to: $REPORTS_DIR${NC}"
 }
 
+# Function to run tests by tag
+run_tag_tests() {
+    local tag="$1"
+    echo -e "${BLUE}🏷️  Running tests with tag: $tag${NC}"
+    
+    java -cp "$CLASSPATH" \
+        -Djava.awt.headless=true \
+        -Dtestfx.robot=glass \
+        -Dtestfx.headless=true \
+        -Dprism.order=sw \
+        -Dprism.text=t2k \
+        -Dglass.platform=Monocle \
+        -Dmonocle.platform=Headless \
+        -Dprism.verbose=true \
+        -Dtest.mode=true \
+        org.junit.platform.console.ConsoleLauncher \
+        --class-path="$CLASSPATH" \
+        --scan-class-path="$TEST_BIN_DIR" \
+        --include-tag="$tag" \
+        --details=tree \
+        --reports-dir="$REPORTS_DIR" \
+        2>&1 | tee "$REPORTS_DIR/${tag}_tests_output.txt"
+    
+    return ${PIPESTATUS[0]}
+}
+
+# Function to run unit tests only (fast)
+run_unit_tests() {
+    echo -e "${GREEN}⚡ Running unit tests (no JavaFX dependencies)${NC}"
+    
+    java -cp "$CLASSPATH" \
+        -Dtest.mode=true \
+        org.junit.platform.console.ConsoleLauncher \
+        --class-path="$CLASSPATH" \
+        --scan-class-path="$TEST_BIN_DIR" \
+        --include-tag="unit" \
+        --details=tree \
+        --reports-dir="$REPORTS_DIR" \
+        2>&1 | tee "$REPORTS_DIR/unit_tests_output.txt"
+    
+    return ${PIPESTATUS[0]}
+}
+
+# Function to run integration tests (with JavaFX)
+run_integration_tests() {
+    echo -e "${YELLOW}🔗 Running integration tests (with JavaFX mocking)${NC}"
+    
+    java -cp "$CLASSPATH" \
+        -Djava.awt.headless=true \
+        -Dtestfx.robot=glass \
+        -Dtestfx.headless=true \
+        -Dprism.order=sw \
+        -Dprism.text=t2k \
+        -Dglass.platform=Monocle \
+        -Dmonocle.platform=Headless \
+        -Dprism.verbose=true \
+        -Dtest.mode=true \
+        org.junit.platform.console.ConsoleLauncher \
+        --class-path="$CLASSPATH" \
+        --scan-class-path="$TEST_BIN_DIR" \
+        --include-tag="integration" \
+        --details=tree \
+        --reports-dir="$REPORTS_DIR" \
+        2>&1 | tee "$REPORTS_DIR/integration_tests_output.txt"
+    
+    return ${PIPESTATUS[0]}
+}
+
 # Parse command line arguments
 case "${1:-all}" in
     "all")
         run_all_tests
+        TEST_RESULT=$?
+        ;;
+    "unit")
+        run_unit_tests
+        TEST_RESULT=$?
+        ;;
+    "integration")
+        run_integration_tests
+        TEST_RESULT=$?
+        ;;
+    "logic")
+        run_tag_tests "logic"
         TEST_RESULT=$?
         ;;
     "entities")
@@ -168,18 +252,28 @@ case "${1:-all}" in
         echo "Usage: $0 [option]"
         echo ""
         echo "Options:"
-        echo "  all        Run all tests (default)"
-        echo "  entities   Run entity tests only"
-        echo "  game       Run game logic tests only"
-        echo "  network    Run networking tests only"
-        echo "  server     Run server tests only"
-        echo "  model      Run model tests only"
-        echo "  --help     Show this help message"
+        echo "  all          Run all tests (default)"
+        echo "  unit         Run unit tests only (fast, no JavaFX)"
+        echo "  integration  Run integration tests (with JavaFX mocking)"
+        echo "  logic        Run pure logic tests only"
+        echo "  entities     Run entity tests only"
+        echo "  game         Run game logic tests only"
+        echo "  network      Run networking tests only"
+        echo "  server       Run server tests only"
+        echo "  model        Run model tests only"
+        echo "  --help       Show this help message"
+        echo ""
+        echo "Test Categories:"
+        echo "  unit         - Pure logic tests, no JavaFX dependencies (fastest)"
+        echo "  integration  - Tests with mocked JavaFX components"
+        echo "  logic        - Business logic tests using TestEntity hierarchy"
         echo ""
         echo "Examples:"
-        echo "  $0              # Run all tests"
-        echo "  $0 entities     # Run only entity tests"
-        echo "  $0 network      # Run only networking tests"
+        echo "  $0               # Run all tests"
+        echo "  $0 unit          # Run only fast unit tests"
+        echo "  $0 logic         # Run only pure logic tests"
+        echo "  $0 integration   # Run only integration tests"
+        echo "  $0 entities      # Run only entity-related tests"
         exit 0
         ;;
     *)

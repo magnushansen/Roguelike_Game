@@ -6,7 +6,6 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 
 public class MainMenuView {
-    MainMenuModel model;
     Runnable startGame;
     Runnable showCommunity;
     Runnable showSettings;
@@ -14,20 +13,17 @@ public class MainMenuView {
     Runnable exit;
 
     public MainMenuView(
-            MainMenuModel model,
             Runnable startGame,
-
             Runnable showSettings,
             Runnable showLoginScreen,
             Runnable exit) {
-        this.model = model;
         this.startGame = startGame;
-
         this.showSettings = showSettings;
         this.showLoginScreen = showLoginScreen;
-
         this.exit = exit;
     }
+
+
 
     @SuppressWarnings("unused")
     public Button createButton(String text, Runnable action) {
@@ -43,7 +39,6 @@ public class MainMenuView {
                 createButton("Start Game", startGame),
                 createButton("Community", showLoginScreen),
                 createButton("Settings", showSettings),
-                // createButton("login", showLoginScreen),
                 createButton("Exit", exit));
 
         return layout;

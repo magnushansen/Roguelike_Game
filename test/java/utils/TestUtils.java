@@ -169,12 +169,44 @@ public class TestUtils {
         return Math.sqrt(dx * dx + dy * dy);
     }
     
+    /**
+     * @deprecated Use waitForCondition() or proper synchronization instead of Thread.sleep
+     */
+    @Deprecated
     public static void waitForMilliseconds(long milliseconds) {
         try {
             Thread.sleep(milliseconds);
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+    }
+    
+    /**
+     * Wait for a condition to become true within a timeout period.
+     * Better alternative to Thread.sleep for testing.
+     */
+    public static void waitForCondition(java.util.function.BooleanSupplier condition, 
+                                       long timeoutMs, long checkIntervalMs) {
+        long startTime = System.currentTimeMillis();
+        while (System.currentTimeMillis() - startTime < timeoutMs) {
+            if (condition.getAsBoolean()) {
+                return;
+            }
+            try {
+                Thread.sleep(checkIntervalMs);
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+                throw new RuntimeException("Interrupted while waiting for condition", e);
+            }
+        }
+        throw new RuntimeException("Condition was not met within " + timeoutMs + "ms");
+    }
+    
+    /**
+     * Wait for a condition with default check interval of 10ms
+     */
+    public static void waitForCondition(java.util.function.BooleanSupplier condition, long timeoutMs) {
+        waitForCondition(condition, timeoutMs, 10);
     }
     
     public static void assertThrowsWithMessage(Class<? extends Throwable> expectedType, 
@@ -231,17 +263,72 @@ public class TestUtils {
         }
     }
     
+    /**
+     * @deprecated Memory testing in unit tests is unreliable. Use profiling tools instead.
+     * For memory leak detection, use weak references and explicit GC testing patterns.
+     */
+    @Deprecated
     public static void memoryTest(Runnable task, String testName) {
+        // Note: This method is unreliable due to GC timing, JVM optimizations, etc.
+        System.gc(); // Still unreliable
+        Runtime.getRuntime().runFinalization();
         System.gc();
+        
         long beforeMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         
         task.run();
         
         System.gc();
-        long afterMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+        Runtime.getRuntime().runFinalization();
+        System.gc();
         
+        long afterMemory = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
         long memoryUsed = afterMemory - beforeMemory;
-        System.out.println(String.format("%s used %d bytes of memory", testName, memoryUsed));
+        
+        // Only log, don't assert, as memory testing is unreliable
+        if (memoryUsed > 0) {
+            System.out.println(String.format("%s allocated approximately %d bytes", testName, memoryUsed));
+        }
+    }
+    
+    // Test entity factory methods using TestEntity hierarchy
+    public static TestPlayer createTestPlayer() {
+        return createTestPlayer(DEFAULT_POSITION_X, DEFAULT_POSITION_Y, DEFAULT_WIDTH, DEFAULT_HEIGHT, 
+                               DEFAULT_HEALTH, DEFAULT_DAMAGE);
+    }
+    
+    public static TestPlayer createTestPlayer(double x, double y, double width, double height, 
+                                            int maxHealth, int damage) {
+        return new TestPlayer(x, y, width, height, maxHealth, damage);
+    }
+    
+    public static TestEnemy createTestEnemy() {
+        return createTestEnemy(DEFAULT_POSITION_X + 100, DEFAULT_POSITION_Y + 100, DEFAULT_WIDTH, DEFAULT_HEIGHT,
+                              DEFAULT_HEALTH, DEFAULT_DAMAGE, DEFAULT_SPEED, 100.0);
+    }
+    
+    public static TestEnemy createTestEnemy(double x, double y, double width, double height,
+                                          int health, int damage, double speed, double detectionRadius) {
+        return new TestEnemy(x, y, width, height, health, damage, speed, detectionRadius);
+    }
+    
+    public static TestProjectile createTestProjectile() {
+        return createTestProjectile(DEFAULT_POSITION_X, DEFAULT_POSITION_Y, 8.0, 8.0,
+                                   DEFAULT_SPEED, 1.0, 0.0, DEFAULT_DAMAGE);
+    }
+    
+    public static TestProjectile createTestProjectile(double x, double y, double width, double height,
+                                                     double speed, double directionX, double directionY, 
+                                                     int damage) {
+        return new TestProjectile(x, y, width, height, speed, directionX, directionY, damage);
+    }
+    
+    public static TestEntity createTestEntity(double x, double y, double width, double height) {
+        return new TestEntity(x, y, width, height) {}; // Anonymous subclass for testing
+    }
+    
+    public static TestEntity createDefaultTestEntity() {
+        return createTestEntity(DEFAULT_POSITION_X, DEFAULT_POSITION_Y, DEFAULT_WIDTH, DEFAULT_HEIGHT);
     }
     
     private TestUtils() {

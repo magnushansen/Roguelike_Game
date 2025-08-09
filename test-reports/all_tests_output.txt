@@ -151,11 +151,11 @@ Cannot send dungeon. Not connected to server.
 Projectile hit an enemy and dealt 25 damage.
 Enemy defeated!
 Enemy defeated!
-Aug 03, 2025 9:55:12 PM Serverapp.Server start
+Aug 09, 2025 3:45:41 PM Serverapp.Server start
 INFO: Server is listening on port 8888
-Aug 03, 2025 9:55:14 PM Serverapp.Server start
+Aug 09, 2025 3:45:42 PM Serverapp.Server start
 SEVERE: Server error: Address already in use
-Aug 03, 2025 9:55:14 PM Serverapp.Server shutdown
+Aug 09, 2025 3:45:42 PM Serverapp.Server shutdown
 INFO: Server shutdown complete
 Player healed by 150 points. Current health: 100
 Player defeated!
@@ -188,6 +188,32 @@ Player healed by 25 points. Current health: 75
 [36m│  │     ├─[0m [34mShould initialize available dungeons list[0m [32m✔[0m
 [36m│  │     ├─[0m [34mShould have non-null client[0m [32m✔[0m
 [36m│  │     └─[0m [34mShould initialize with default values[0m [32m✔[0m
+[36m│  ├─[0m [36mPure Logic Player Tests[0m [32m✔[0m
+[36m│  │  ├─[0m [36mCollision Logic Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould detect overlap with enemy[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould not overlap with distant entity[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould calculate distance correctly[0m [32m✔[0m
+[36m│  │  ├─[0m [36mInventory Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould add items to inventory[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould start with empty inventory[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould handle multiple items[0m [32m✔[0m
+[36m│  │  ├─[0m [36mCombat Logic Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould create projectile when attacking[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould attack in facing direction when stationary[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould respect attack cooldown[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould attack in movement direction when moving[0m [32m✔[0m
+[36m│  │  ├─[0m [36mHealth Management Tests[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould not heal above max health[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould heal correctly[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould take damage correctly[0m [32m✔[0m
+[36m│  │  │  ├─[0m [34mShould die when health reaches zero[0m [32m✔[0m
+[36m│  │  │  └─[0m [34mShould start with full health[0m [32m✔[0m
+[36m│  │  └─[0m [36mMovement Logic Tests[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould move right when moveRight called[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould handle diagonal movement[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould update facing direction based on movement[0m [32m✔[0m
+[36m│  │     ├─[0m [34mShould move left when moveLeft called[0m [32m✔[0m
+[36m│  │     └─[0m [34mShould stop moving when stop methods called[0m [32m✔[0m
 [36m│  ├─[0m [36mLoader Integration Tests[0m [32m✔[0m
 [36m│  │  ├─[0m [36mIntegration with GameModel Tests[0m [32m✔[0m
 [36m│  │  │  └─[0m [34mShould update game model with loaded entities[0m [32m✔[0m
@@ -373,18 +399,18 @@ Player healed by 25 points. Current health: 75
 [36m├─[0m [36mJUnit Vintage[0m [32m✔[0m
 [36m└─[0m [36mJUnit Platform Suite[0m [32m✔[0m
 
-Test run finished after 2130 ms
-[        58 containers found      ]
+Test run finished after 2128 ms
+[        64 containers found      ]
 [         0 containers skipped    ]
-[        58 containers started    ]
+[        64 containers started    ]
 [         0 containers aborted    ]
-[        58 containers successful ]
+[        64 containers successful ]
 [         0 containers failed     ]
-[       153 tests found           ]
+[       173 tests found           ]
 [         0 tests skipped         ]
-[       153 tests started         ]
+[       173 tests started         ]
 [         0 tests aborted         ]
-[       153 tests successful      ]
+[       173 tests successful      ]
 [         0 tests failed          ]
 
 

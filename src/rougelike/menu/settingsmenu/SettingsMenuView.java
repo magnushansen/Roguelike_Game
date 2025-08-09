@@ -19,7 +19,7 @@ public class SettingsMenuView {
     Consumer<String> dungeonChanged;
 
     public SettingsMenuView(Model rougelikeModel, Runnable menuButtonClicked, Consumer<Image> backgroundChanged,
-            Consumer<String> dungeonChanged) {
+        Consumer<String> dungeonChanged) {
         this.rougelikeModel = rougelikeModel;
         this.backgroundChanged = backgroundChanged;
         this.menuButtonClicked = menuButtonClicked;

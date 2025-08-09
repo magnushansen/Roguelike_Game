@@ -7,9 +7,12 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Tag;
 import javafx.scene.image.Image;
 import utils.MockFactory;
 
+@Tag("integration")
+@Tag("entities")
 @DisplayName("Player Entity Tests")
 class PlayerTest {
     
